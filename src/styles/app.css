@@ -1,0 +1,35 @@
+:root {
+  color-scheme: light;
+  background: var(--color-page);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  min-height: 100%;
+  overflow: visible;
+  font-family: var(--font-primary);
+  background: var(--color-page);
+}
+
+/* Keep the generated original's centered 2560px frame on ultrawide screens. */
+@media (min-width: 2560px) {
+  body {
+    max-width: 2560px;
+    margin-inline: auto;
+  }
+}
+
+#root { display: contents; }
+
+.react-page { display: contents; }

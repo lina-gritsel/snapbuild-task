@@ -1,0 +1,565 @@
+.dds-pricing {
+  display: flex;
+  flex-direction: column;
+  gap: calc(40 / 14.4 * 1vw);
+  padding: calc(96 / 14.4 * 1vw) calc(40 / 14.4 * 1vw);
+  overflow: hidden;
+  background: var(--color-background);
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+}
+
+.dds-pricing-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(8 / 14.4 * 1vw);
+}
+
+.dds-pricing-title {
+  max-width: calc(900 / 14.4 * 1vw);
+  font-weight: 500 !important;
+  text-wrap: balance;
+}
+
+.dds-pricing-subtitle {
+  max-width: calc(420 / 14.4 * 1vw);
+  text-wrap: pretty;
+}
+
+.dds-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: calc(16 / 14.4 * 1vw);
+}
+
+.dds-pricing-card {
+  position: relative;
+  min-height: calc(610 / 14.4 * 1vw);
+  display: flex;
+  flex-direction: column;
+  padding: calc(32 / 14.4 * 1vw);
+  overflow: hidden;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--card-radius);
+  background: var(--foreground-primary);
+  box-shadow: 0 12px 36px var(--color-shadow-brand);
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    transform var(--motion-duration-standard) var(--motion-ease),
+    box-shadow var(--motion-duration-standard) var(--motion-ease),
+    opacity var(--motion-duration-slow) var(--ease-entrance);
+  transition-delay: calc(var(--pricing-index) * 90ms);
+}
+
+.dds-pricing.is-pricing-revealed .dds-pricing-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dds-pricing-card--featured {
+  isolation: isolate;
+  border-color: var(--color-transparent);
+  background: var(--foreground-primary);
+}
+
+.dds-pricing-card--featured::before,
+.dds-pricing-card--featured::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: calc(2 / 14.4 * 1vw);
+  border-radius: inherit;
+  background: var(--gradient-brand-strong);
+  background-size: 220% 220%;
+  -webkit-mask: linear-gradient(var(--color-surface) 0 0) content-box, linear-gradient(var(--color-surface) 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(var(--color-surface) 0 0) content-box, linear-gradient(var(--color-surface) 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.dds-pricing-card--featured::before {
+  z-index: 2;
+  animation: dds-pricing-border-flow 5s linear infinite;
+}
+
+.dds-pricing-card--featured::after {
+  z-index: -1;
+  opacity: 0.34;
+  filter: blur(calc(10 / 14.4 * 1vw));
+  transform: scale(1.006);
+  animation: dds-pricing-border-flow 5s linear infinite;
+  transition:
+    opacity var(--motion-duration-standard) var(--ease-standard),
+    filter var(--motion-duration-standard) var(--ease-standard),
+    transform var(--motion-duration-standard) var(--ease-emphasized);
+}
+
+.dds-pricing-card--featured > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes dds-pricing-border-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.dds-pricing-card-top {
+  min-height: calc(126 / 14.4 * 1vw);
+  display: flex;
+  flex-direction: column;
+  gap: calc(16 / 14.4 * 1vw);
+}
+
+.dds-pricing-plan-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(16 / 14.4 * 1vw);
+}
+
+.dds-pricing-plan-name {
+  margin: 0;
+  font-size: calc(24 / 14.4 * 1vw);
+  font-weight: 600;
+  line-height: 1.3334;
+  letter-spacing: calc(-0.7 / 14.4 * 1vw);
+}
+
+.dds-pricing-label {
+  display: inline-flex;
+  align-items: center;
+  min-height: calc(28 / 14.4 * 1vw);
+  padding: calc(5 / 14.4 * 1vw) calc(12 / 14.4 * 1vw);
+  border-radius: var(--radius-pill);
+  background: var(--gradient-brand);
+  color: var(--color-on-dark);
+  font-size: calc(12 / 14.4 * 1vw);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.dds-pricing-description {
+  max-width: calc(330 / 14.4 * 1vw);
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: calc(15 / 14.4 * 1vw);
+  line-height: 1.4667;
+}
+
+.dds-pricing-price-wrap {
+  min-height: calc(105 / 14.4 * 1vw);
+  display: flex;
+  align-items: flex-end;
+  gap: calc(8 / 14.4 * 1vw);
+  padding-top: calc(30 / 14.4 * 1vw);
+}
+
+.dds-pricing-price {
+  margin: 0;
+  font-size: calc(44 / 14.4 * 1vw);
+  font-weight: 550;
+  line-height: 1;
+  letter-spacing: calc(-1.6 / 14.4 * 1vw);
+  white-space: nowrap;
+}
+
+.dds-pricing-suffix {
+  margin: 0 0 calc(5 / 14.4 * 1vw);
+  color: var(--text-secondary);
+  font-size: calc(14 / 14.4 * 1vw);
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.dds-pricing-action {
+  height: calc(52 / 14.4 * 1vw);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: calc(24 / 14.4 * 1vw);
+  padding: 0 calc(20 / 14.4 * 1vw);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-strong);
+  color: var(--color-on-dark);
+  font-size: calc(15 / 14.4 * 1vw);
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    background-color var(--motion-duration-fast) var(--ease-standard),
+    transform var(--motion-duration-fast) var(--ease-emphasized);
+}
+
+.dds-pricing-card--featured .dds-pricing-action {
+  background: var(--gradient-brand-strong);
+}
+
+.dds-pricing-arrow {
+  font-size: calc(18 / 14.4 * 1vw);
+  font-weight: 500;
+  transition: transform var(--motion-duration-fast) var(--ease-emphasized);
+}
+
+.dds-pricing-divider {
+  height: 1px;
+  margin-top: calc(32 / 14.4 * 1vw);
+  background: var(--color-divider);
+}
+
+.dds-pricing-includes {
+  margin: calc(24 / 14.4 * 1vw) 0 0;
+  font-size: calc(14 / 14.4 * 1vw);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.dds-pricing-features {
+  display: flex;
+  flex-direction: column;
+  gap: calc(12 / 14.4 * 1vw);
+  margin: calc(16 / 14.4 * 1vw) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dds-pricing-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(10 / 14.4 * 1vw);
+  color: var(--color-text-on-surface-alpha);
+  font-size: calc(14 / 14.4 * 1vw);
+  line-height: 1.4286;
+}
+
+.dds-pricing-check {
+  position: relative;
+  width: calc(18 / 14.4 * 1vw);
+  height: calc(18 / 14.4 * 1vw);
+  flex: 0 0 auto;
+  border-radius: var(--radius-round);
+  background: var(--color-surface-hover-soft);
+}
+
+.dds-pricing-check::after {
+  content: "";
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 5px;
+  height: 3px;
+  border-bottom: 1.5px solid var(--color-ink);
+  border-left: 1.5px solid var(--color-ink);
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.dds-pricing-note {
+  margin: calc(-16 / 14.4 * 1vw) 0 0;
+  color: var(--color-text-muted-alpha);
+  font-size: calc(13 / 14.4 * 1vw);
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (hover: hover) {
+  .dds-pricing-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px var(--color-black-alpha-10);
+  }
+
+  .dds-pricing-card--featured:hover {
+    transform: translateY(-10px) scale(1.012);
+    box-shadow: 0 28px 64px var(--color-black-alpha-12);
+  }
+
+  .dds-pricing-card--featured:hover::before,
+  .dds-pricing-card--featured:hover::after {
+    animation-duration: 2.2s;
+  }
+
+  .dds-pricing-card--featured:hover::after {
+    opacity: 0.72;
+    filter: blur(calc(15 / 14.4 * 1vw));
+    transform: scale(1.014);
+  }
+
+  .dds-pricing-action:hover {
+    background: var(--color-surface-hover);
+  }
+
+  .dds-pricing-card--featured .dds-pricing-action:hover {
+    background: var(--gradient-brand);
+  }
+
+  .dds-pricing-action:hover .dds-pricing-arrow {
+    transform: translate(2px, -2px);
+  }
+}
+
+@media (max-width: 1023px) {
+  .dds-pricing {
+    gap: calc(40 / 8.1 * 1vw);
+    padding: calc(60 / 8.1 * 1vw) calc(20 / 8.1 * 1vw);
+  }
+
+  .dds-pricing-header {
+    gap: calc(8 / 8.1 * 1vw);
+  }
+
+  .dds-pricing-title {
+    max-width: calc(720 / 8.1 * 1vw);
+    font-size: calc(46.4 / 8.1 * 1vw);
+    line-height: 1.2308;
+  }
+
+  .dds-pricing-subtitle {
+    max-width: calc(520 / 8.1 * 1vw);
+  }
+
+  .dds-pricing-card--featured::before,
+  .dds-pricing-card--featured::after {
+    padding: calc(2 / 8.1 * 1vw);
+  }
+
+  .dds-pricing-card--featured::after {
+    filter: blur(calc(10 / 8.1 * 1vw));
+  }
+
+  .dds-pricing-grid {
+    grid-template-columns: 1fr;
+    gap: calc(16 / 8.1 * 1vw);
+  }
+
+  .dds-pricing-card {
+    min-height: 0;
+    padding: calc(32 / 8.1 * 1vw);
+  }
+
+  .dds-pricing-card-top {
+    min-height: 0;
+    gap: calc(12 / 8.1 * 1vw);
+  }
+
+  .dds-pricing-plan-heading {
+    gap: calc(16 / 8.1 * 1vw);
+  }
+
+  .dds-pricing-plan-name {
+    font-size: calc(24 / 8.1 * 1vw);
+    letter-spacing: calc(-0.7 / 8.1 * 1vw);
+  }
+
+  .dds-pricing-label {
+    min-height: calc(28 / 8.1 * 1vw);
+    padding: calc(5 / 8.1 * 1vw) calc(12 / 8.1 * 1vw);
+    font-size: calc(12 / 8.1 * 1vw);
+  }
+
+  .dds-pricing-description {
+    max-width: calc(460 / 8.1 * 1vw);
+    font-size: calc(15 / 8.1 * 1vw);
+  }
+
+  .dds-pricing-price-wrap {
+    min-height: 0;
+    gap: calc(8 / 8.1 * 1vw);
+    padding-top: calc(32 / 8.1 * 1vw);
+  }
+
+  .dds-pricing-price {
+    font-size: calc(44 / 8.1 * 1vw);
+    letter-spacing: calc(-1.6 / 8.1 * 1vw);
+  }
+
+  .dds-pricing-suffix,
+  .dds-pricing-includes,
+  .dds-pricing-features li {
+    font-size: calc(14 / 8.1 * 1vw);
+  }
+
+  .dds-pricing-action {
+    height: calc(52 / 8.1 * 1vw);
+    margin-top: calc(24 / 8.1 * 1vw);
+    padding: 0 calc(20 / 8.1 * 1vw);
+    font-size: calc(15 / 8.1 * 1vw);
+  }
+
+  .dds-pricing-arrow {
+    font-size: calc(18 / 8.1 * 1vw);
+  }
+
+  .dds-pricing-divider {
+    margin-top: calc(32 / 8.1 * 1vw);
+  }
+
+  .dds-pricing-includes {
+    margin-top: calc(24 / 8.1 * 1vw);
+  }
+
+  .dds-pricing-features {
+    gap: calc(12 / 8.1 * 1vw);
+    margin-top: calc(16 / 8.1 * 1vw);
+  }
+
+  .dds-pricing-features li {
+    gap: calc(10 / 8.1 * 1vw);
+  }
+
+  .dds-pricing-check {
+    width: calc(18 / 8.1 * 1vw);
+    height: calc(18 / 8.1 * 1vw);
+  }
+
+  .dds-pricing-note {
+    margin-top: calc(-16 / 8.1 * 1vw);
+    font-size: calc(13 / 8.1 * 1vw);
+  }
+}
+
+@media (max-width: 767px) {
+  .dds-pricing {
+    gap: calc(32 / 3.75 * 1vw);
+    padding: calc(48 / 3.75 * 1vw) calc(16 / 3.75 * 1vw);
+  }
+
+  .dds-pricing-header {
+    gap: calc(8 / 3.75 * 1vw);
+  }
+
+  .dds-pricing-title,
+  .dds-pricing-subtitle {
+    max-width: none;
+  }
+
+  .dds-pricing-title {
+    font-size: calc(32 / 3.75 * 1vw);
+    line-height: 1.25;
+  }
+
+  .dds-pricing-card--featured::before,
+  .dds-pricing-card--featured::after {
+    padding: calc(2 / 3.75 * 1vw);
+  }
+
+  .dds-pricing-card--featured::after {
+    filter: blur(calc(10 / 3.75 * 1vw));
+  }
+
+  .dds-pricing-grid {
+    gap: calc(12 / 3.75 * 1vw);
+  }
+
+  .dds-pricing-card {
+    padding: calc(24 / 3.75 * 1vw);
+    border-radius: var(--radius-md);
+  }
+
+  .dds-pricing-card-top {
+    gap: calc(10 / 3.75 * 1vw);
+  }
+
+  .dds-pricing-plan-heading {
+    gap: calc(12 / 3.75 * 1vw);
+  }
+
+  .dds-pricing-plan-name {
+    font-size: calc(20 / 3.75 * 1vw);
+    line-height: 1.4;
+    letter-spacing: calc(-0.5 / 3.75 * 1vw);
+  }
+
+  .dds-pricing-label {
+    min-height: calc(26 / 3.75 * 1vw);
+    padding: calc(5 / 3.75 * 1vw) calc(10 / 3.75 * 1vw);
+    font-size: calc(11 / 3.75 * 1vw);
+  }
+
+  .dds-pricing-description {
+    max-width: none;
+    font-size: calc(14 / 3.75 * 1vw);
+    line-height: 1.4286;
+  }
+
+  .dds-pricing-price-wrap {
+    gap: calc(6 / 3.75 * 1vw);
+    padding-top: calc(28 / 3.75 * 1vw);
+  }
+
+  .dds-pricing-price {
+    font-size: calc(38 / 3.75 * 1vw);
+    letter-spacing: calc(-1.2 / 3.75 * 1vw);
+  }
+
+  .dds-pricing-suffix {
+    margin-bottom: calc(4 / 3.75 * 1vw);
+    font-size: calc(12 / 3.75 * 1vw);
+  }
+
+  .dds-pricing-action {
+    height: calc(48 / 3.75 * 1vw);
+    margin-top: calc(20 / 3.75 * 1vw);
+    padding: 0 calc(16 / 3.75 * 1vw);
+    font-size: calc(14 / 3.75 * 1vw);
+  }
+
+  .dds-pricing-arrow {
+    font-size: calc(17 / 3.75 * 1vw);
+  }
+
+  .dds-pricing-divider {
+    margin-top: calc(28 / 3.75 * 1vw);
+  }
+
+  .dds-pricing-includes {
+    margin-top: calc(20 / 3.75 * 1vw);
+    font-size: calc(14 / 3.75 * 1vw);
+  }
+
+  .dds-pricing-features {
+    gap: calc(10 / 3.75 * 1vw);
+    margin-top: calc(14 / 3.75 * 1vw);
+  }
+
+  .dds-pricing-features li {
+    gap: calc(9 / 3.75 * 1vw);
+    font-size: calc(14 / 3.75 * 1vw);
+  }
+
+  .dds-pricing-check {
+    width: calc(18 / 3.75 * 1vw);
+    height: calc(18 / 3.75 * 1vw);
+  }
+
+  .dds-pricing-note {
+    margin-top: calc(-12 / 3.75 * 1vw);
+    font-size: calc(12 / 3.75 * 1vw);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dds-pricing-card,
+  .dds-pricing-card--featured::before,
+  .dds-pricing-card--featured::after,
+  .dds-pricing-action,
+  .dds-pricing-arrow {
+    transition: none;
+  }
+
+  .dds-pricing-card--featured::before,
+  .dds-pricing-card--featured::after {
+    animation: none;
+  }
+
+  .dds-pricing-card--featured::after {
+    display: none;
+  }
+
+  .dds-pricing-card {
+    opacity: 1;
+    transform: none;
+  }
+}

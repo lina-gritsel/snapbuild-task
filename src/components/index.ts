@@ -1,0 +1,8 @@
+export { default as BriefToMaterials } from './BriefToMaterials/BriefToMaterials'
+export { default as ContactForm } from './ContactForm/ContactForm'
+export { default as CookieBanner } from './CookieBanner/CookieBanner'
+export { default as Header } from './Header/Header'
+export { default as Lightbox } from './Lightbox/Lightbox'
+export { default as Pricing } from './Pricing/Pricing'
+export { default as RequestToResult } from './RequestToResult/RequestToResult'
+export { default as Testimonials } from './Testimonials/Testimonials'

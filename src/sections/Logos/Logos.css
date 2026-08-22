@@ -1,0 +1,88 @@
+/* Logos marquee rules extracted from the original inline CSS. */
+#logos {
+  /* The static export has one extra body flex gap around the logo section. */
+  margin-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+  #logos {
+    transform: translateY(32px);
+  }
+}
+
+.dds-marquee-item {
+  --h: calc(37 / 14.4 * 1vw);
+  --k: 1;
+  height: calc(var(--h) * var(--k));
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.dds-marquee-item-3 { --k: 0.5946; }
+.dds-marquee-item-4 { --k: 0.8649; }
+.dds-marquee-item-7 { --k: 0.7005; }
+.dds-marquee-item-8 { --k: 1.1116; }
+.dds-marquee-item-9 { --k: 1.0839; }
+.dds-marquee-item-10 { --k: 0.6511; }
+.dds-marquee-item-3 img { width: calc(100.85 / 37 * var(--h)); }
+.dds-marquee-item-4 img { width: calc(43.44 / 37 * var(--h)); }
+.dds-marquee-item-7 img { width: calc(102.19 / 37 * var(--h)); }
+.dds-marquee-item-8 img { width: calc(113.58 / 37 * var(--h)); }
+.dds-marquee-item-9 img { width: calc(98.22 / 37 * var(--h)); }
+.dds-marquee-item-10 img { width: calc(106.09 / 37 * var(--h)); }
+.dds-marquee-track { align-items: flex-end; overflow: visible; }
+.dds-marquee-content { display: contents; }
+.dds-marquee-content[aria-hidden="true"] { display: none; }
+
+@media (max-width: 1023px) {
+  .dds-marquee { overflow: hidden; }
+  .dds-marquee-item {
+    --h: calc(37 / 8.1 * 1vw);
+    margin: 0;
+    order: 0;
+  }
+  .dds-marquee-item:nth-child(n + 5) { display: flex; }
+  .dds-marquee-content,
+  .dds-marquee-content[aria-hidden="true"] {
+    display: flex;
+    align-items: flex-end;
+    flex: 0 0 auto;
+    gap: var(--dds-marquee-gap);
+  }
+  .dds-marquee-track {
+    --dds-marquee-gap: calc(48 / 8.1 * 1vw);
+    --dds-marquee-half-gap: calc(24 / 8.1 * 1vw);
+    --dds-marquee-loop-offset: calc(-50% - var(--dds-marquee-half-gap));
+    align-self: flex-start;
+    gap: var(--dds-marquee-gap);
+    padding: 0;
+    margin: 0;
+    width: max-content;
+    max-width: none;
+    justify-content: flex-start;
+    animation: dds-marquee-scroll var(--dds-marquee-duration) linear infinite;
+  }
+  .dds-marquee-track {
+    --dds-marquee-duration: 15.5s;
+    animation-duration: 15.5s;
+    animation-play-state: paused;
+  }
+  .dds-marquee-track.is-marquee-ready {
+    animation-play-state: running;
+  }
+}
+
+@media (max-width: 767px) {
+  .dds-marquee-item { --h: calc(28 / 3.75 * 1vw); }
+  .dds-marquee-track {
+    --dds-marquee-gap: calc(40 / 3.75 * 1vw);
+    --dds-marquee-half-gap: calc(20 / 3.75 * 1vw);
+    --dds-marquee-loop-offset: calc(-50% - var(--dds-marquee-half-gap));
+    --dds-marquee-duration: 12.1s;
+    animation-duration: 12.1s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dds-marquee-track { animation: none !important; }
+}

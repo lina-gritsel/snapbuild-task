@@ -1,0 +1,183 @@
+/* CTA section rules extracted from the original inline CSS. */
+.dds-launch[data-cms-section="cta.launch"] {
+  position: relative;
+  overflow: hidden;
+  border-radius: calc(32 / 14.4 * 1vw);
+  background-color: var(--color-surface);
+  background-image: linear-gradient(157deg, var(--color-surface) 11%, var(--color-gradient-peach) 33%, var(--color-gradient-pink) 53%, var(--color-gradient-lilac) 67%, var(--color-gradient-lavender) 90%, var(--color-gradient-lavender) 97%, var(--color-surface) 100%);
+  color: var(--color-ink);
+  font-family: var(--font-primary);
+  padding: calc(96 / 14.4 * 1vw) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.dds-launch-dust {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: calc(15 / 14.4 * 1vw);
+  opacity: 0.2;
+  mix-blend-mode: plus-lighter;
+  pointer-events: none;
+}
+.dds-launch-dust img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.dds-launch-dust--t,
+.dds-launch-dust--m {
+  display: none;
+}
+.dds-launch-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(32 / 14.4 * 1vw);
+  max-width: calc(898 / 14.4 * 1vw);
+  margin: 0 auto;
+}
+.dds-launch-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(16 / 14.4 * 1vw);
+}
+.dds-launch-title {
+  margin: 0;
+  text-align: center;
+  color: var(--color-ink);
+  font-weight: 600;
+  font-size: calc(52 / 14.4 * 1vw);
+  line-height: calc(64 / 52);
+  letter-spacing: calc(-0.5 / 14.4 * 1vw);
+}
+.dds-launch-subtitle {
+  margin: 0;
+  text-align: center;
+  color: var(--color-ink);
+  font-weight: 500;
+  font-size: calc(16 / 14.4 * 1vw);
+  line-height: calc(24 / 16);
+}
+.dds-launch-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: calc(12 / 14.4 * 1vw);
+}
+.dds-launch-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: var(--color-surface);
+  border-radius: calc(24 / 14.4 * 1vw);
+  padding: calc(14 / 14.4 * 1vw) calc(20 / 14.4 * 1vw);
+  font-weight: 600;
+  font-size: calc(14 / 14.4 * 1vw);
+  line-height: calc(20 / 14);
+}
+.dds-launch-btn-text {
+  background: linear-gradient(90deg, var(--color-brand-orange), var(--color-brand-pink) 46%, var(--color-brand-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: var(--color-transparent);
+}
+.dds-launch-btn-text--dark {
+  background: none;
+  -webkit-text-fill-color: var(--color-ink);
+  color: var(--color-ink);
+}
+
+@media (max-width: 1023px) {
+  .dds-launch {
+    padding: calc(72 / 8.1 * 1vw) 0;
+    border-radius: calc(32 / 8.1 * 1vw);
+  }
+  .dds-launch-dust {
+    border-radius: calc(15 / 8.1 * 1vw);
+  }
+  .dds-launch-dust--d {
+    display: none;
+  }
+  .dds-launch-dust--t {
+    display: block;
+  }
+  .dds-launch-content {
+    max-width: calc(658 / 8.1 * 1vw);
+    gap: calc(32 / 8.1 * 1vw);
+  }
+  .dds-launch-intro {
+    gap: calc(16 / 8.1 * 1vw);
+  }
+  .dds-launch-title {
+    font-size: calc(52 / 8.1 * 1vw);
+    letter-spacing: calc(-0.5 / 8.1 * 1vw);
+  }
+  .dds-launch-subtitle {
+    font-size: calc(16 / 8.1 * 1vw);
+  }
+  .dds-launch-actions {
+    gap: calc(12 / 8.1 * 1vw);
+  }
+  .dds-launch-btn {
+    padding: calc(14 / 8.1 * 1vw) calc(20 / 8.1 * 1vw);
+    font-size: calc(14 / 8.1 * 1vw);
+    border-radius: calc(24 / 8.1 * 1vw);
+  }
+}
+
+@media (max-width: 767px) {
+  .dds-launch {
+    padding: calc(64 / 3.75 * 1vw) calc(32 / 3.75 * 1vw);
+    border-radius: calc(32 / 3.75 * 1vw);
+  }
+  .dds-launch-dust {
+    border-radius: calc(15 / 3.75 * 1vw);
+  }
+  .dds-launch-dust--t {
+    display: none;
+  }
+  .dds-launch-dust--m {
+    display: block;
+    inset: auto;
+    left: calc(-8 / 3.75 * 1vw);
+    top: calc(26 / 3.75 * 1vw);
+    width: calc(388 / 3.75 * 1vw);
+    height: calc(388 / 3.75 * 1vw);
+  }
+  .dds-launch-content {
+    max-width: none;
+    gap: calc(24 / 3.75 * 1vw);
+  }
+  .dds-launch-intro {
+    gap: calc(12 / 3.75 * 1vw);
+  }
+  .dds-launch-title {
+    font-size: calc(32 / 3.75 * 1vw);
+    line-height: calc(40 / 32);
+    letter-spacing: calc(-0.5 / 3.75 * 1vw);
+  }
+  .dds-launch-subtitle {
+    font-size: calc(14 / 3.75 * 1vw);
+    line-height: calc(20 / 14);
+  }
+  .dds-launch-actions {
+    gap: calc(12 / 3.75 * 1vw);
+  }
+  .dds-launch-btn {
+    padding: calc(12 / 3.75 * 1vw) calc(16 / 3.75 * 1vw);
+    font-size: calc(12 / 3.75 * 1vw);
+    line-height: calc(16 / 12);
+    border-radius: var(--radius-pill);
+  }
+}

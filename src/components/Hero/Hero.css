@@ -1,0 +1,53 @@
+/* Hero-specific rules extracted from the original inline CSS. */
+#hero .dds-app-preview-title {
+  line-height: 1.08;
+}
+#hero .dds-app-preview-media {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+#hero .dds-app-preview-shot,
+#hero img[data-cms-image="hero.app-screenshot"] {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-top-md);
+}
+
+@media (max-width: 767px) {
+  .dds-app-preview-shot {
+    border-radius: calc((100vw - 32px) * 0.0255);
+  }
+  .dds-app-preview-card {
+    border-radius: clamp(14px, 4vw, 20px);
+  }
+  #hero .dds-app-preview-intro {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+  }
+  #hero .dds-app-preview-title,
+  #hero .dds-app-preview-subtitle,
+  #hero .dds-app-preview-eyebrow {
+    width: auto;
+    max-width: 100%;
+  }
+  #hero .dds-app-preview-card {
+    height: auto;
+    min-height: calc(624 / 3.75 * 1vw);
+  }
+  #hero .dds-app-preview-media {
+    height: calc(187.5 / 3.75 * 1vw);
+    overflow: hidden;
+  }
+  #hero .dds-app-preview-shot {
+    cursor: zoom-in;
+  }
+}

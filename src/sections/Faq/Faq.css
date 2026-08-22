@@ -1,0 +1,49 @@
+/* FAQ section rules extracted from the original inline CSS. */
+#faq .dds-accordion-list {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  grid-template-columns: none;
+  grid-template-rows: none;
+  column-gap: calc(32 / 14.4 * 1vw);
+  row-gap: 0;
+}
+#faq .dds-accordion-col {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  min-width: 0;
+  row-gap: calc(20 / 14.4 * 1vw);
+}
+#faq .dds-accordion-item {
+  align-self: stretch;
+}
+.dds-accordion-question {
+  flex: 1 1 auto;
+  width: auto;
+  max-width: none;
+  min-width: 0;
+}
+.dds-accordion-icon {
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+@media (max-width: 1023px) {
+  #faq .dds-accordion-list {
+    flex-direction: column;
+    row-gap: calc(20 / 8.1 * 1vw);
+  }
+  #faq .dds-accordion-col {
+    row-gap: calc(20 / 8.1 * 1vw);
+  }
+}
+
+@media (max-width: 767px) {
+  #faq .dds-accordion-list {
+    row-gap: calc(16 / 3.75 * 1vw);
+  }
+  #faq .dds-accordion-col {
+    row-gap: calc(16 / 3.75 * 1vw);
+  }
+}

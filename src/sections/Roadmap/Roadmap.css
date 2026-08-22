@@ -1,0 +1,24 @@
+/* Roadmap-specific rules extracted from the original inline CSS. */
+.dds-rmap-dot {
+  background: var(--color-transparent);
+}
+
+@media (max-width: 1023px) {
+  #roadmap {
+    padding-top: calc(32 / 8.1 * 1vw);
+    padding-bottom: calc(60 / 8.1 * 1vw);
+  }
+  #roadmap .dds-rmap-header {
+    gap: calc(8 / 8.1 * 1vw);
+  }
+}
+
+@media (max-width: 767px) {
+  #roadmap {
+    padding-top: calc(32 / 3.75 * 1vw);
+    padding-bottom: calc(42 / 3.75 * 1vw);
+  }
+  #roadmap .dds-rmap-header {
+    gap: calc(8 / 3.75 * 1vw);
+  }
+}
