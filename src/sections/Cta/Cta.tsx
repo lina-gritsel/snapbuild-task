@@ -14,21 +14,21 @@ export default function Cta(): ReactElement {
       <div className="dds-launch-dust" aria-hidden="true">
         <img
           className="dds-launch-dust--d"
-          src="/assets/images/c3714c375a04149c.webp"
+          src="assets/images/c3714c375a04149c.webp"
           data-cms-image="cta.launch.dust-d"
           data-cms-no-generate
           alt={''}
         />
         <img
           className="dds-launch-dust--t"
-          src="/assets/images/f38670cf14e4b7dd.webp"
+          src="assets/images/f38670cf14e4b7dd.webp"
           data-cms-image="cta.launch.dust-t"
           data-cms-no-generate
           alt={''}
         />
         <img
           className="dds-launch-dust--m"
-          src="/assets/images/a4285c4b0717be2b.webp"
+          src="assets/images/a4285c4b0717be2b.webp"
           data-cms-image="cta.launch.dust-m"
           data-cms-no-generate
           alt={''}

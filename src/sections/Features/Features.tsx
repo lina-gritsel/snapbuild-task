@@ -15,10 +15,10 @@ export default function Features(): ReactElement {
           <picture className="dds-why-safe-image">
             <source
               media="(max-width: 767px)"
-              srcSet="/assets/images/security-approved-models-mobile-v2.jpg"
+              srcSet="assets/images/security-approved-models-mobile-v2.jpg"
             />
             <img
-              src="/assets/images/security-approved-models.webp"
+              src="assets/images/security-approved-models.webp"
               alt={''}
               data-cms-image="features.why-safe.asset-1"
               aria-hidden="true"
@@ -53,10 +53,10 @@ export default function Features(): ReactElement {
           <picture className="dds-why-safe-image">
             <source
               media="(max-width: 767px)"
-              srcSet="/assets/images/security-private-cloud-mobile-v2.jpg"
+              srcSet="assets/images/security-private-cloud-mobile-v2.jpg"
             />
             <img
-              src="/assets/images/security-private-cloud.webp"
+              src="assets/images/security-private-cloud.webp"
               alt={''}
               data-cms-image="features.why-safe.asset-2"
               aria-hidden="true"
@@ -91,10 +91,10 @@ export default function Features(): ReactElement {
           <picture className="dds-why-safe-image">
             <source
               media="(max-width: 767px)"
-              srcSet="/assets/images/security-ai-stack-mobile-v2.jpg"
+              srcSet="assets/images/security-ai-stack-mobile-v2.jpg"
             />
             <img
-              src="/assets/images/security-ai-stack.webp"
+              src="assets/images/security-ai-stack.webp"
               alt={''}
               data-cms-image="features.why-safe.asset-3"
               aria-hidden="true"

@@ -96,7 +96,7 @@ export default function Compare(): ReactElement {
             <div className="sds-compare-cell">
               <span className="sds-check">
                 <img
-                  src="/assets/images/a4ce0581ce7807b6.svg"
+                  src="assets/images/a4ce0581ce7807b6.svg"
                   data-cms-image="compare.r3.check-1"
                   data-cms-no-generate
                   alt={''}
@@ -111,12 +111,7 @@ export default function Compare(): ReactElement {
             </div>
             <div className="sds-compare-cell">
               <span className="sds-check">
-                <img
-                  src="/assets/images/a4ce0581ce7807b6.svg"
-                  alt={''}
-                  width="100%"
-                  height="100%"
-                />
+                <img src="assets/images/a4ce0581ce7807b6.svg" alt={''} width="100%" height="100%" />
               </span>
               <span data-cms-key="compare.r3.c2" />
             </div>

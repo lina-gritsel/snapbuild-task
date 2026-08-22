@@ -23,7 +23,7 @@ export default function Footer(): ReactElement {
             style={{}}
           >
             <img
-              src="/assets/images/582db07d8ccd60da.svg"
+              src="assets/images/582db07d8ccd60da.svg"
               data-cms-logo
               data-cms-image="footer.logo"
               data-cms-no-generate

@@ -24,7 +24,7 @@ export default function Logos(): ReactElement {
         <div ref={contentRef} className="dds-marquee-content">
           <div className="dds-marquee-item dds-marquee-item-3">
             <img
-              src="/assets/images/5cd01de0b6a5e001.svg"
+              src="assets/images/5cd01de0b6a5e001.svg"
               style={{ display: 'block' }}
               width="100%"
               height="100%"
@@ -35,7 +35,7 @@ export default function Logos(): ReactElement {
           </div>
           <div className="dds-marquee-item dds-marquee-item-4">
             <img
-              src="/assets/images/ee341193d7cf46d6.svg"
+              src="assets/images/ee341193d7cf46d6.svg"
               style={{ display: 'block' }}
               width="100%"
               height="100%"
@@ -46,7 +46,7 @@ export default function Logos(): ReactElement {
           </div>
           <div className="dds-marquee-item dds-marquee-item-7">
             <img
-              src="/assets/images/logo-avito.svg"
+              src="assets/images/logo-avito.svg"
               style={{ display: 'block' }}
               width="100%"
               height="100%"
@@ -57,7 +57,7 @@ export default function Logos(): ReactElement {
           </div>
           <div className="dds-marquee-item dds-marquee-item-8">
             <img
-              src="/assets/images/logo-cian.svg"
+              src="assets/images/logo-cian.svg"
               style={{ display: 'block' }}
               width="100%"
               height="100%"
@@ -68,7 +68,7 @@ export default function Logos(): ReactElement {
           </div>
           <div className="dds-marquee-item dds-marquee-item-10">
             <img
-              src="/assets/images/logo-lenta.svg"
+              src="assets/images/logo-lenta.svg"
               style={{ display: 'block' }}
               width="100%"
               height="100%"
@@ -81,7 +81,7 @@ export default function Logos(): ReactElement {
         <div className="dds-marquee-content" aria-hidden="true">
           <div className="dds-marquee-item dds-marquee-item-3">
             <img
-              src="/assets/images/5cd01de0b6a5e001.svg"
+              src="assets/images/5cd01de0b6a5e001.svg"
               style={{ display: 'block' }}
               width="100%"
               height="100%"
@@ -90,7 +90,7 @@ export default function Logos(): ReactElement {
           </div>
           <div className="dds-marquee-item dds-marquee-item-4">
             <img
-              src="/assets/images/ee341193d7cf46d6.svg"
+              src="assets/images/ee341193d7cf46d6.svg"
               style={{ display: 'block' }}
               width="100%"
               height="100%"
@@ -99,7 +99,7 @@ export default function Logos(): ReactElement {
           </div>
           <div className="dds-marquee-item dds-marquee-item-7">
             <img
-              src="/assets/images/logo-avito.svg"
+              src="assets/images/logo-avito.svg"
               style={{ display: 'block' }}
               width="100%"
               height="100%"
@@ -108,7 +108,7 @@ export default function Logos(): ReactElement {
           </div>
           <div className="dds-marquee-item dds-marquee-item-8">
             <img
-              src="/assets/images/logo-cian.svg"
+              src="assets/images/logo-cian.svg"
               style={{ display: 'block' }}
               width="100%"
               height="100%"
@@ -117,7 +117,7 @@ export default function Logos(): ReactElement {
           </div>
           <div className="dds-marquee-item dds-marquee-item-10">
             <img
-              src="/assets/images/logo-lenta.svg"
+              src="assets/images/logo-lenta.svg"
               style={{ display: 'block' }}
               width="100%"
               height="100%"

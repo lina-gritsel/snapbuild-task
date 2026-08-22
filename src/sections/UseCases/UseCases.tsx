@@ -287,7 +287,7 @@ export default function UseCases(): ReactElement {
             <img
               className="dds-tabs-media dds-tabs-media--active dds-tabs-media--tab1-item1"
               data-media="tab1-item1"
-              src="/assets/images/use-cases-tab1-item1-v2.webp"
+              src="assets/images/use-cases-tab1-item1-v2.webp"
               alt={''}
               width={2880}
               height={1620}
@@ -295,7 +295,7 @@ export default function UseCases(): ReactElement {
             <img
               className="dds-tabs-media dds-tabs-media--tab1-item2"
               data-media="tab1-item2"
-              src="/assets/images/use-cases-tab1-item2.webp"
+              src="assets/images/use-cases-tab1-item2.webp"
               alt={''}
               width={2880}
               height={1620}
@@ -303,7 +303,7 @@ export default function UseCases(): ReactElement {
             <img
               className="dds-tabs-media dds-tabs-media--tab1-item3"
               data-media="tab1-item3"
-              src="/assets/images/use-cases-tab1-item3.webp"
+              src="assets/images/use-cases-tab1-item3.webp"
               alt={''}
               width={2880}
               height={1620}
@@ -311,7 +311,7 @@ export default function UseCases(): ReactElement {
             <img
               className="dds-tabs-media dds-tabs-media--tab1-item4"
               data-media="tab1-item4"
-              src="/assets/images/use-cases-web-04.webp"
+              src="assets/images/use-cases-web-04.webp"
               alt={''}
               width={2880}
               height={1620}
@@ -319,7 +319,7 @@ export default function UseCases(): ReactElement {
             <img
               className="dds-tabs-media dds-tabs-media--tab2-item1"
               data-media="tab2-item1"
-              src="/assets/images/use-cases-img-01.webp"
+              src="assets/images/use-cases-img-01.webp"
               alt={''}
               width={2880}
               height={1620}
@@ -327,7 +327,7 @@ export default function UseCases(): ReactElement {
             <img
               className="dds-tabs-media dds-tabs-media--tab2-item2"
               data-media="tab2-item2"
-              src="/assets/images/use-cases-tab2-item2.webp"
+              src="assets/images/use-cases-tab2-item2.webp"
               alt={''}
               width={2880}
               height={1620}
@@ -335,7 +335,7 @@ export default function UseCases(): ReactElement {
             <img
               className="dds-tabs-media dds-tabs-media--tab2-item3"
               data-media="tab2-item3"
-              src="/assets/images/use-cases-tab2-item3.webp"
+              src="assets/images/use-cases-tab2-item3.webp"
               alt={''}
               width={2880}
               height={1620}
@@ -343,7 +343,7 @@ export default function UseCases(): ReactElement {
             <img
               className="dds-tabs-media dds-tabs-media--tab2-item4"
               data-media="tab2-item4"
-              src="/assets/images/use-cases-tab2-item4.webp"
+              src="assets/images/use-cases-tab2-item4.webp"
               alt={''}
               width={2880}
               height={1620}
@@ -351,7 +351,7 @@ export default function UseCases(): ReactElement {
             <img
               className="dds-tabs-media dds-tabs-media--tab3-item1"
               data-media="tab3-item1"
-              src="/assets/images/use-cases-vid-01.webp"
+              src="assets/images/use-cases-vid-01.webp"
               alt={''}
               width={2880}
               height={1620}
@@ -359,7 +359,7 @@ export default function UseCases(): ReactElement {
             <img
               className="dds-tabs-media dds-tabs-media--tab3-item2"
               data-media="tab3-item2"
-              src="/assets/images/use-cases-tab3-item2.webp"
+              src="assets/images/use-cases-tab3-item2.webp"
               alt={''}
               width={2880}
               height={1620}
@@ -367,7 +367,7 @@ export default function UseCases(): ReactElement {
             <img
               className="dds-tabs-media dds-tabs-media--tab3-item3"
               data-media="tab3-item3"
-              src="/assets/images/use-cases-tab3-item3.webp"
+              src="assets/images/use-cases-tab3-item3.webp"
               alt={''}
               width={2880}
               height={1620}
@@ -375,7 +375,7 @@ export default function UseCases(): ReactElement {
             <img
               className="dds-tabs-media dds-tabs-media--tab3-item4"
               data-media="tab3-item4"
-              src="/assets/images/use-cases-tab3-item4.webp"
+              src="assets/images/use-cases-tab3-item4.webp"
               alt={''}
               width={2880}
               height={1620}
@@ -383,7 +383,7 @@ export default function UseCases(): ReactElement {
             <img
               className="dds-tabs-media dds-tabs-media--tab4-item1"
               data-media="tab4-item1"
-              src="/assets/images/use-cases-tab4-item1.webp"
+              src="assets/images/use-cases-tab4-item1.webp"
               alt={''}
               width={2880}
               height={1620}
@@ -391,7 +391,7 @@ export default function UseCases(): ReactElement {
             <img
               className="dds-tabs-media dds-tabs-media--tab4-item2"
               data-media="tab4-item2"
-              src="/assets/images/use-cases-tab4-item2.webp"
+              src="assets/images/use-cases-tab4-item2.webp"
               alt={''}
               width={2880}
               height={1620}
@@ -399,7 +399,7 @@ export default function UseCases(): ReactElement {
             <img
               className="dds-tabs-media dds-tabs-media--tab4-item3"
               data-media="tab4-item3"
-              src="/assets/images/use-cases-tab4-item3.webp"
+              src="assets/images/use-cases-tab4-item3.webp"
               alt={''}
               width={2880}
               height={1620}
@@ -407,7 +407,7 @@ export default function UseCases(): ReactElement {
             <img
               className="dds-tabs-media dds-tabs-media--tab4-item4"
               data-media="tab4-item4"
-              src="/assets/images/use-cases-tab4-item4.webp"
+              src="assets/images/use-cases-tab4-item4.webp"
               alt={''}
               width={2880}
               height={1620}
@@ -415,7 +415,7 @@ export default function UseCases(): ReactElement {
             <img
               className="dds-tabs-media dds-tabs-media--tab5-item1"
               data-media="tab5-item1"
-              src="/assets/images/use-cases-pres-01.jpg"
+              src="assets/images/use-cases-pres-01.jpg"
               alt={''}
               width={2880}
               height={1620}
@@ -423,7 +423,7 @@ export default function UseCases(): ReactElement {
             <img
               className="dds-tabs-media dds-tabs-media--tab5-item2"
               data-media="tab5-item2"
-              src="/assets/images/use-cases-tab5-item2.webp"
+              src="assets/images/use-cases-tab5-item2.webp"
               alt={''}
               width={2880}
               height={1620}
@@ -431,7 +431,7 @@ export default function UseCases(): ReactElement {
             <img
               className="dds-tabs-media dds-tabs-media--tab5-item3"
               data-media="tab5-item3"
-              src="/assets/images/use-cases-tab5-item3.webp"
+              src="assets/images/use-cases-tab5-item3.webp"
               alt={''}
               width={2880}
               height={1620}
@@ -439,7 +439,7 @@ export default function UseCases(): ReactElement {
             <img
               className="dds-tabs-media dds-tabs-media--tab5-item4"
               data-media="tab5-item4"
-              src="/assets/images/use-cases-tab5-item4.webp"
+              src="assets/images/use-cases-tab5-item4.webp"
               alt={''}
               width={2880}
               height={1620}

@@ -42,7 +42,7 @@ export default function RequestToResult(): ReactElement {
 
         <div className="dds-request-result-output">
           <img
-            src="/assets/images/use-cases-tab1-item1-v2.webp"
+            src="assets/images/use-cases-tab1-item1-v2.webp"
             alt="Готовый лендинг, собранный SnapBuild по запросу"
             width="2880"
             height="1620"

@@ -110,7 +110,7 @@ export default function Header(): ReactElement {
           data-cms-link-page-id="019f7fde-df04-7ed1-b554-24792c0e689c"
         >
           <img
-            src="/assets/images/582db07d8ccd60da.svg"
+            src="assets/images/582db07d8ccd60da.svg"
             data-cms-logo=""
             data-cms-image="header.logo"
             data-cms-no-generate=""

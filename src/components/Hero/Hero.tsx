@@ -43,7 +43,7 @@ export default function Hero(): ReactElement {
               className="dds-app-preview-shot"
               data-cms-image="hero.app-screenshot"
               data-cms-no-generate=""
-              src="/assets/images/hero-snapbuild-2026-08-07-v2.webp"
+              src="assets/images/hero-snapbuild-2026-08-07-v2.webp"
               alt=""
             />
           </div>

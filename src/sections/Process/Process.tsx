@@ -36,7 +36,7 @@ export default function Process(): ReactElement {
       <div className="dds-steps-grid">
         <article className="dds-steps-card" style={{}}>
           <img
-            src="/assets/images/84a4450b3827bc21.webp"
+            src="assets/images/84a4450b3827bc21.webp"
             className="dds-steps-media dds-steps-media--1"
             data-cms-image="process.step1.image"
             alt={''}
@@ -83,14 +83,14 @@ export default function Process(): ReactElement {
           <picture className="dds-steps-picture">
             <source
               media="(max-width: 767px)"
-              srcSet="/assets/images/process-flexible-configuration-mobile.webp"
+              srcSet="assets/images/process-flexible-configuration-mobile.webp"
             />
             <source
               media="(max-width: 1023px)"
-              srcSet="/assets/images/process-flexible-configuration-tablet.webp"
+              srcSet="assets/images/process-flexible-configuration-tablet.webp"
             />
             <img
-              src="/assets/images/process-flexible-configuration.webp"
+              src="assets/images/process-flexible-configuration.webp"
               className="dds-steps-media dds-steps-media--2"
               data-cms-image="process.step2.image"
               alt={''}
@@ -136,7 +136,7 @@ export default function Process(): ReactElement {
         </article>
         <article className="dds-steps-card">
           <img
-            src="/assets/images/afe03eb4a67d5dfb.webp"
+            src="assets/images/afe03eb4a67d5dfb.webp"
             className="dds-steps-media dds-steps-media--3"
             data-cms-image="process.step3.image"
             alt={''}

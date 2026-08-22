@@ -38,7 +38,7 @@ export default function Faq(): ReactElement {
               </p>
               <span className="dds-accordion-icon">
                 <img
-                  src="/assets/images/c2663c497fb468e1.webp"
+                  src="assets/images/c2663c497fb468e1.webp"
                   style={{ display: 'block', objectFit: 'fill' }}
                   width="100%"
                   height="100%"
@@ -99,7 +99,7 @@ export default function Faq(): ReactElement {
               </p>
               <span className="dds-accordion-icon">
                 <img
-                  src="/assets/images/c2663c497fb468e1.webp"
+                  src="assets/images/c2663c497fb468e1.webp"
                   style={{ display: 'block', objectFit: 'fill' }}
                   width="100%"
                   height="100%"
@@ -136,7 +136,7 @@ export default function Faq(): ReactElement {
               </p>
               <span className="dds-accordion-icon">
                 <img
-                  src="/assets/images/c2663c497fb468e1.webp"
+                  src="assets/images/c2663c497fb468e1.webp"
                   style={{ display: 'block', objectFit: 'fill' }}
                   width="100%"
                   height="100%"
@@ -173,7 +173,7 @@ export default function Faq(): ReactElement {
               </p>
               <span className="dds-accordion-icon">
                 <img
-                  src="/assets/images/c2663c497fb468e1.webp"
+                  src="assets/images/c2663c497fb468e1.webp"
                   style={{ display: 'block', objectFit: 'fill' }}
                   width="100%"
                   height="100%"
@@ -212,7 +212,7 @@ export default function Faq(): ReactElement {
               </p>
               <span className="dds-accordion-icon">
                 <img
-                  src="/assets/images/c2663c497fb468e1.webp"
+                  src="assets/images/c2663c497fb468e1.webp"
                   style={{ display: 'block', objectFit: 'fill' }}
                   width="100%"
                   height="100%"
@@ -249,7 +249,7 @@ export default function Faq(): ReactElement {
               </p>
               <span className="dds-accordion-icon">
                 <img
-                  src="/assets/images/c2663c497fb468e1.webp"
+                  src="assets/images/c2663c497fb468e1.webp"
                   style={{ display: 'block', objectFit: 'fill' }}
                   width="100%"
                   height="100%"
@@ -285,7 +285,7 @@ export default function Faq(): ReactElement {
               </p>
               <span className="dds-accordion-icon">
                 <img
-                  src="/assets/images/c2663c497fb468e1.webp"
+                  src="assets/images/c2663c497fb468e1.webp"
                   style={{ display: 'block', objectFit: 'fill' }}
                   width="100%"
                   height="100%"
@@ -326,7 +326,7 @@ export default function Faq(): ReactElement {
               </p>
               <span className="dds-accordion-icon">
                 <img
-                  src="/assets/images/c2663c497fb468e1.webp"
+                  src="assets/images/c2663c497fb468e1.webp"
                   style={{ display: 'block', objectFit: 'fill' }}
                   width="100%"
                   height="100%"
