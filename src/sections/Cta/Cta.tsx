@@ -1,4 +1,5 @@
 import type { ReactElement } from 'react'
+import { SNAPBUILD_BUILDER_URL } from '../../constants/links'
 
 export default function Cta(): ReactElement {
   return (
@@ -58,7 +59,7 @@ export default function Cta(): ReactElement {
             data-cms-link-original-tag="div"
             data-cms-node="div:1/div:1/a:0"
             data-cms-link="div:1-div:1-a:0"
-            href="https://builder.snapbuild.ru/page/019f7fde-d606-7e57-beda-3b163e5f28f3/019f7fde-df04-7ed1-b554-24792c0e689c"
+            href={SNAPBUILD_BUILDER_URL}
             data-cms-link-preserved-style-props="display,text-decoration,color"
             style={{ display: 'flex', textDecoration: 'none', color: 'inherit' }}
             target="_blank"
