@@ -147,7 +147,7 @@ export default function Header(): ReactElement {
         <div className="dds-main-actions">
           <a
             className="dds-btn dds-btn--l dds-btn--secondary dds-main-demo"
-            href="https://builder.snapbuild.ru/"
+            href="#contact"
             data-node-id="2804:15383"
             data-cms-link="header.cta.demo.href"
             target="_self"
@@ -229,7 +229,7 @@ export default function Header(): ReactElement {
         </a>
         <a
           className="dds-btn dds-btn--l dds-btn--secondary"
-          href="https://builder.snapbuild.ru/"
+          href="#contact"
           data-cms-link="header.cta.demo.href.mobile"
           onClick={closeMenu}
         >

@@ -1,5 +1,4 @@
 import type { ReactElement } from 'react'
-import { SNAPBUILD_BUILDER_URL } from '../../constants/links'
 
 export default function Cta(): ReactElement {
   return (
@@ -59,11 +58,9 @@ export default function Cta(): ReactElement {
             data-cms-link-original-tag="div"
             data-cms-node="div:1/div:1/a:0"
             data-cms-link="div:1-div:1-a:0"
-            href={SNAPBUILD_BUILDER_URL}
+            href="#contact"
             data-cms-link-preserved-style-props="display,text-decoration,color"
             style={{ display: 'flex', textDecoration: 'none', color: 'inherit' }}
-            target="_blank"
-            rel="noopener noreferrer"
           >
             <span className="dds-launch-btn-text" data-cms-key="cta.launch.button1">
               Начать сейчас

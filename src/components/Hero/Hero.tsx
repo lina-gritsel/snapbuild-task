@@ -1,5 +1,4 @@
 import type { ReactElement } from 'react'
-import { SNAPBUILD_BUILDER_URL } from '../../constants/links'
 
 export default function Hero(): ReactElement {
   return (
@@ -28,11 +27,9 @@ export default function Hero(): ReactElement {
               data-cms-link-original-tag="div"
               data-cms-node="div:0/div:0/div:0/a:1"
               data-cms-link="div:0-div:0-div:0-a:1"
-              href={SNAPBUILD_BUILDER_URL}
+              href="#contact"
               data-cms-link-preserved-style-props="display,text-decoration,color"
               style={{ display: 'flex', textDecoration: 'none', color: 'inherit' }}
-              target="_blank"
-              rel="noopener noreferrer"
             >
               <span className="dds-app-preview-cta-text" data-cms-key="hero.cta">
                 Начать сейчас
