@@ -1,8 +1,8 @@
 .dds-pricing {
   display: flex;
   flex-direction: column;
-  gap: calc(40 / 14.4 * 1vw);
-  padding: calc(96 / 14.4 * 1vw) calc(40 / 14.4 * 1vw);
+  gap: calc(40 / 14.4 * min(1vw, 14.4px));
+  padding: calc(96 / 14.4 * min(1vw, 14.4px)) calc(40 / 14.4 * min(1vw, 14.4px));
   overflow: hidden;
   background: var(--color-background);
   color: var(--text-primary);
@@ -13,32 +13,32 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: calc(8 / 14.4 * 1vw);
+  gap: calc(8 / 14.4 * min(1vw, 14.4px));
 }
 
 .dds-pricing-title {
-  max-width: calc(900 / 14.4 * 1vw);
+  max-width: calc(900 / 14.4 * min(1vw, 14.4px));
   font-weight: 500 !important;
   text-wrap: balance;
 }
 
 .dds-pricing-subtitle {
-  max-width: calc(420 / 14.4 * 1vw);
+  max-width: calc(420 / 14.4 * min(1vw, 14.4px));
   text-wrap: pretty;
 }
 
 .dds-pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: calc(16 / 14.4 * 1vw);
+  gap: calc(16 / 14.4 * min(1vw, 14.4px));
 }
 
 .dds-pricing-card {
   position: relative;
-  min-height: calc(610 / 14.4 * 1vw);
+  min-height: calc(610 / 14.4 * min(1vw, 14.4px));
   display: flex;
   flex-direction: column;
-  padding: calc(32 / 14.4 * 1vw);
+  padding: calc(32 / 14.4 * min(1vw, 14.4px));
   overflow: hidden;
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--card-radius);
@@ -69,7 +69,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  padding: calc(2 / 14.4 * 1vw);
+  padding: calc(2 / 14.4 * min(1vw, 14.4px));
   border-radius: inherit;
   background: var(--gradient-brand-strong);
   background-size: 220% 220%;
@@ -88,7 +88,7 @@
 .dds-pricing-card--featured::after {
   z-index: -1;
   opacity: 0.34;
-  filter: blur(calc(10 / 14.4 * 1vw));
+  filter: blur(calc(10 / 14.4 * min(1vw, 14.4px)));
   transform: scale(1.006);
   animation: dds-pricing-border-flow 5s linear infinite;
   transition:
@@ -109,84 +109,84 @@
 }
 
 .dds-pricing-card-top {
-  min-height: calc(126 / 14.4 * 1vw);
+  min-height: calc(126 / 14.4 * min(1vw, 14.4px));
   display: flex;
   flex-direction: column;
-  gap: calc(16 / 14.4 * 1vw);
+  gap: calc(16 / 14.4 * min(1vw, 14.4px));
 }
 
 .dds-pricing-plan-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: calc(16 / 14.4 * 1vw);
+  gap: calc(16 / 14.4 * min(1vw, 14.4px));
 }
 
 .dds-pricing-plan-name {
   margin: 0;
-  font-size: calc(24 / 14.4 * 1vw);
+  font-size: calc(24 / 14.4 * min(1vw, 14.4px));
   font-weight: 600;
   line-height: 1.3334;
-  letter-spacing: calc(-0.7 / 14.4 * 1vw);
+  letter-spacing: calc(-0.7 / 14.4 * min(1vw, 14.4px));
 }
 
 .dds-pricing-label {
   display: inline-flex;
   align-items: center;
-  min-height: calc(28 / 14.4 * 1vw);
-  padding: calc(5 / 14.4 * 1vw) calc(12 / 14.4 * 1vw);
+  min-height: calc(28 / 14.4 * min(1vw, 14.4px));
+  padding: calc(5 / 14.4 * min(1vw, 14.4px)) calc(12 / 14.4 * min(1vw, 14.4px));
   border-radius: var(--radius-pill);
   background: var(--gradient-brand);
   color: var(--color-on-dark);
-  font-size: calc(12 / 14.4 * 1vw);
+  font-size: calc(12 / 14.4 * min(1vw, 14.4px));
   font-weight: 600;
   line-height: 1;
 }
 
 .dds-pricing-description {
-  max-width: calc(330 / 14.4 * 1vw);
+  max-width: calc(330 / 14.4 * min(1vw, 14.4px));
   margin: 0;
   color: var(--text-secondary);
-  font-size: calc(15 / 14.4 * 1vw);
+  font-size: calc(15 / 14.4 * min(1vw, 14.4px));
   line-height: 1.4667;
 }
 
 .dds-pricing-price-wrap {
-  min-height: calc(105 / 14.4 * 1vw);
+  min-height: calc(105 / 14.4 * min(1vw, 14.4px));
   display: flex;
   align-items: flex-end;
-  gap: calc(8 / 14.4 * 1vw);
-  padding-top: calc(30 / 14.4 * 1vw);
+  gap: calc(8 / 14.4 * min(1vw, 14.4px));
+  padding-top: calc(30 / 14.4 * min(1vw, 14.4px));
 }
 
 .dds-pricing-price {
   margin: 0;
-  font-size: calc(44 / 14.4 * 1vw);
+  font-size: calc(44 / 14.4 * min(1vw, 14.4px));
   font-weight: 550;
   line-height: 1;
-  letter-spacing: calc(-1.6 / 14.4 * 1vw);
+  letter-spacing: calc(-1.6 / 14.4 * min(1vw, 14.4px));
   white-space: nowrap;
 }
 
 .dds-pricing-suffix {
-  margin: 0 0 calc(5 / 14.4 * 1vw);
+  margin: 0 0 calc(5 / 14.4 * min(1vw, 14.4px));
   color: var(--text-secondary);
-  font-size: calc(14 / 14.4 * 1vw);
+  font-size: calc(14 / 14.4 * min(1vw, 14.4px));
   line-height: 1.4;
   white-space: nowrap;
 }
 
 .dds-pricing-action {
-  height: calc(52 / 14.4 * 1vw);
+  height: calc(52 / 14.4 * min(1vw, 14.4px));
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: calc(24 / 14.4 * 1vw);
-  padding: 0 calc(20 / 14.4 * 1vw);
+  margin-top: calc(24 / 14.4 * min(1vw, 14.4px));
+  padding: 0 calc(20 / 14.4 * min(1vw, 14.4px));
   border-radius: var(--radius-sm);
   background: var(--color-surface-strong);
   color: var(--color-on-dark);
-  font-size: calc(15 / 14.4 * 1vw);
+  font-size: calc(15 / 14.4 * min(1vw, 14.4px));
   font-weight: 600;
   line-height: 1;
   text-decoration: none;
@@ -200,20 +200,20 @@
 }
 
 .dds-pricing-arrow {
-  font-size: calc(18 / 14.4 * 1vw);
+  font-size: calc(18 / 14.4 * min(1vw, 14.4px));
   font-weight: 500;
   transition: transform var(--motion-duration-fast) var(--ease-emphasized);
 }
 
 .dds-pricing-divider {
   height: 1px;
-  margin-top: calc(32 / 14.4 * 1vw);
+  margin-top: calc(32 / 14.4 * min(1vw, 14.4px));
   background: var(--color-divider);
 }
 
 .dds-pricing-includes {
-  margin: calc(24 / 14.4 * 1vw) 0 0;
-  font-size: calc(14 / 14.4 * 1vw);
+  margin: calc(24 / 14.4 * min(1vw, 14.4px)) 0 0;
+  font-size: calc(14 / 14.4 * min(1vw, 14.4px));
   font-weight: 600;
   line-height: 1.4;
 }
@@ -221,8 +221,8 @@
 .dds-pricing-features {
   display: flex;
   flex-direction: column;
-  gap: calc(12 / 14.4 * 1vw);
-  margin: calc(16 / 14.4 * 1vw) 0 0;
+  gap: calc(12 / 14.4 * min(1vw, 14.4px));
+  margin: calc(16 / 14.4 * min(1vw, 14.4px)) 0 0;
   padding: 0;
   list-style: none;
 }
@@ -230,16 +230,16 @@
 .dds-pricing-features li {
   display: flex;
   align-items: flex-start;
-  gap: calc(10 / 14.4 * 1vw);
+  gap: calc(10 / 14.4 * min(1vw, 14.4px));
   color: var(--color-text-on-surface-alpha);
-  font-size: calc(14 / 14.4 * 1vw);
+  font-size: calc(14 / 14.4 * min(1vw, 14.4px));
   line-height: 1.4286;
 }
 
 .dds-pricing-check {
   position: relative;
-  width: calc(18 / 14.4 * 1vw);
-  height: calc(18 / 14.4 * 1vw);
+  width: calc(18 / 14.4 * min(1vw, 14.4px));
+  height: calc(18 / 14.4 * min(1vw, 14.4px));
   flex: 0 0 auto;
   border-radius: var(--radius-round);
   background: var(--color-surface-hover-soft);
@@ -258,9 +258,9 @@
 }
 
 .dds-pricing-note {
-  margin: calc(-16 / 14.4 * 1vw) 0 0;
+  margin: calc(-16 / 14.4 * min(1vw, 14.4px)) 0 0;
   color: var(--color-text-muted-alpha);
-  font-size: calc(13 / 14.4 * 1vw);
+  font-size: calc(13 / 14.4 * min(1vw, 14.4px));
   line-height: 1.5;
   text-align: center;
 }
@@ -283,7 +283,7 @@
 
   .dds-pricing-card--featured:hover::after {
     opacity: 0.72;
-    filter: blur(calc(15 / 14.4 * 1vw));
+    filter: blur(calc(15 / 14.4 * min(1vw, 14.4px)));
     transform: scale(1.014);
   }
 

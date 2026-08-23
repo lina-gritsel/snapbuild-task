@@ -1,15 +1,15 @@
 .dds-contact {
-  padding: calc(96 / 14.4 * 1vw) calc(40 / 14.4 * 1vw);
+  padding: calc(96 / 14.4 * min(1vw, 14.4px)) calc(40 / 14.4 * min(1vw, 14.4px));
   color: var(--text-primary);
 }
 
 .dds-contact-shell {
   display: flex;
   align-items: stretch;
-  gap: calc(80 / 14.4 * 1vw);
-  padding: calc(48 / 14.4 * 1vw);
+  gap: calc(80 / 14.4 * min(1vw, 14.4px));
+  padding: calc(48 / 14.4 * min(1vw, 14.4px));
   border: 1px solid var(--color-border-soft);
-  border-radius: calc(32 / 14.4 * 1vw);
+  border-radius: calc(32 / 14.4 * min(1vw, 14.4px));
   background: var(--foreground-primary);
 }
 
@@ -21,27 +21,27 @@
 }
 
 .dds-contact-eyebrow {
-  margin: 0 0 calc(20 / 14.4 * 1vw);
+  margin: 0 0 calc(20 / 14.4 * min(1vw, 14.4px));
   color: var(--text-secondary);
-  font-size: calc(14 / 14.4 * 1vw);
+  font-size: calc(14 / 14.4 * min(1vw, 14.4px));
   font-weight: 500;
   line-height: 1.4;
 }
 
 .dds-contact-title {
-  max-width: calc(480 / 14.4 * 1vw);
+  max-width: calc(480 / 14.4 * min(1vw, 14.4px));
 }
 
 .dds-contact-subtitle {
-  max-width: calc(410 / 14.4 * 1vw);
-  margin-top: calc(12 / 14.4 * 1vw);
+  max-width: calc(410 / 14.4 * min(1vw, 14.4px));
+  margin-top: calc(12 / 14.4 * min(1vw, 14.4px));
 }
 
 .dds-contact-direct {
   margin-top: auto;
-  padding-top: calc(48 / 14.4 * 1vw);
+  padding-top: calc(48 / 14.4 * min(1vw, 14.4px));
   color: var(--text-primary);
-  font-size: calc(16 / 14.4 * 1vw);
+  font-size: calc(16 / 14.4 * min(1vw, 14.4px));
   font-weight: 500;
   line-height: 1.5;
   text-decoration: none;
@@ -50,24 +50,24 @@
 
 .dds-contact-form {
   display: flex;
-  width: calc(560 / 14.4 * 1vw);
+  width: calc(560 / 14.4 * min(1vw, 14.4px));
   flex: 0 0 auto;
   flex-direction: column;
-  gap: calc(20 / 14.4 * 1vw);
+  gap: calc(20 / 14.4 * min(1vw, 14.4px));
 }
 
 .dds-contact-fields {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: calc(16 / 14.4 * 1vw);
+  gap: calc(16 / 14.4 * min(1vw, 14.4px));
 }
 
 .dds-contact-field {
   display: flex;
   flex-direction: column;
-  gap: calc(8 / 14.4 * 1vw);
+  gap: calc(8 / 14.4 * min(1vw, 14.4px));
   color: var(--text-secondary);
-  font-size: calc(13 / 14.4 * 1vw);
+  font-size: calc(13 / 14.4 * min(1vw, 14.4px));
   font-weight: 500;
   line-height: 1.4;
 }
@@ -79,21 +79,21 @@
 .dds-contact-field input,
 .dds-contact-field textarea {
   width: 100%;
-  min-height: calc(52 / 14.4 * 1vw);
-  padding: calc(14 / 14.4 * 1vw) calc(16 / 14.4 * 1vw);
+  min-height: calc(52 / 14.4 * min(1vw, 14.4px));
+  padding: calc(14 / 14.4 * min(1vw, 14.4px)) calc(16 / 14.4 * min(1vw, 14.4px));
   border: 1px solid var(--color-border-soft);
-  border-radius: calc(14 / 14.4 * 1vw);
+  border-radius: calc(14 / 14.4 * min(1vw, 14.4px));
   outline: none;
   background: var(--color-surface);
   color: var(--text-primary);
   font: inherit;
-  font-size: calc(15 / 14.4 * 1vw);
+  font-size: calc(15 / 14.4 * min(1vw, 14.4px));
   font-weight: 400;
   transition: border-color var(--motion-duration-fast) var(--ease-standard), box-shadow var(--motion-duration-fast) var(--ease-standard);
 }
 
 .dds-contact-field textarea {
-  min-height: calc(112 / 14.4 * 1vw);
+  min-height: calc(112 / 14.4 * min(1vw, 14.4px));
   resize: vertical;
 }
 
@@ -111,20 +111,20 @@
 .dds-contact-consent {
   display: flex;
   align-items: flex-start;
-  gap: calc(10 / 14.4 * 1vw);
+  gap: calc(10 / 14.4 * min(1vw, 14.4px));
   color: var(--text-secondary);
-  font-size: calc(13 / 14.4 * 1vw);
+  font-size: calc(13 / 14.4 * min(1vw, 14.4px));
   line-height: 1.45;
 }
 
 .dds-contact-consent input {
-  width: calc(16 / 14.4 * 1vw);
-  height: calc(16 / 14.4 * 1vw);
+  width: calc(16 / 14.4 * min(1vw, 14.4px));
+  height: calc(16 / 14.4 * min(1vw, 14.4px));
   flex: 0 0 auto;
-  margin: calc(1 / 14.4 * 1vw) 0 0;
+  margin: calc(1 / 14.4 * min(1vw, 14.4px)) 0 0;
   appearance: none;
   border: 1px solid var(--color-text-muted-alpha);
-  border-radius: calc(16 / 14.4 * 1vw);
+  border-radius: calc(16 / 14.4 * min(1vw, 14.4px));
   background: var(--color-surface);
   cursor: pointer;
 }
@@ -151,15 +151,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: calc(52 / 14.4 * 1vw);
-  padding: calc(14 / 14.4 * 1vw) calc(20 / 14.4 * 1vw);
+  min-height: calc(52 / 14.4 * min(1vw, 14.4px));
+  padding: calc(14 / 14.4 * min(1vw, 14.4px)) calc(20 / 14.4 * min(1vw, 14.4px));
   border: 0;
-  border-radius: calc(16 / 14.4 * 1vw);
+  border-radius: calc(16 / 14.4 * min(1vw, 14.4px));
   background: var(--gradient-brand-strong);
   color: var(--color-surface);
   cursor: pointer;
   font-family: inherit;
-  font-size: calc(15 / 14.4 * 1vw);
+  font-size: calc(15 / 14.4 * min(1vw, 14.4px));
   font-weight: 600;
   transition: transform var(--motion-duration-fast) var(--ease-emphasized), opacity var(--motion-duration-fast) var(--ease-standard);
 }
@@ -170,7 +170,7 @@
 }
 
 .dds-contact-submit-arrow {
-  font-size: calc(18 / 14.4 * 1vw);
+  font-size: calc(18 / 14.4 * min(1vw, 14.4px));
 }
 
 .dds-contact-topic-select {
@@ -180,19 +180,19 @@
 .dds-contact-topic-trigger {
   display: flex;
   width: 100% !important;
-  min-height: calc(52 / 14.4 * 1vw);
+  min-height: calc(52 / 14.4 * min(1vw, 14.4px));
   align-self: stretch;
   align-items: center;
   justify-content: space-between;
-  padding: calc(14 / 14.4 * 1vw) calc(16 / 14.4 * 1vw);
+  padding: calc(14 / 14.4 * min(1vw, 14.4px)) calc(16 / 14.4 * min(1vw, 14.4px));
   border: 1px solid var(--color-border-soft);
-  border-radius: calc(14 / 14.4 * 1vw);
+  border-radius: calc(14 / 14.4 * min(1vw, 14.4px));
   outline: none;
   background: var(--color-surface);
   color: var(--text-primary);
   cursor: pointer;
   font: inherit;
-  font-size: calc(15 / 14.4 * 1vw);
+  font-size: calc(15 / 14.4 * min(1vw, 14.4px));
   text-align: left;
   transition: border-color var(--motion-duration-fast) var(--ease-standard), box-shadow var(--motion-duration-fast) var(--ease-standard);
 }
@@ -203,32 +203,32 @@
 }
 
 .dds-contact-topic-chevron {
-  width: calc(9 / 14.4 * 1vw);
-  height: calc(9 / 14.4 * 1vw);
-  margin-right: calc(3 / 14.4 * 1vw);
+  width: calc(9 / 14.4 * min(1vw, 14.4px));
+  height: calc(9 / 14.4 * min(1vw, 14.4px));
+  margin-right: calc(3 / 14.4 * min(1vw, 14.4px));
   border-right: 2px solid currentColor;
   border-bottom: 2px solid currentColor;
-  transform: rotate(45deg) translateY(calc(-2 / 14.4 * 1vw));
+  transform: rotate(45deg) translateY(calc(-2 / 14.4 * min(1vw, 14.4px)));
   transition: transform var(--motion-duration-fast) var(--ease-standard);
 }
 
 .dds-contact-topic-trigger[aria-expanded="true"] .dds-contact-topic-chevron {
-  transform: rotate(225deg) translateY(calc(-2 / 14.4 * 1vw));
+  transform: rotate(225deg) translateY(calc(-2 / 14.4 * min(1vw, 14.4px)));
 }
 
 .dds-contact-topic-list {
   position: absolute;
   z-index: 4;
-  top: calc(100% + calc(8 / 14.4 * 1vw));
+  top: calc(100% + calc(8 / 14.4 * min(1vw, 14.4px)));
   right: 0;
   left: 0;
   display: grid;
-  gap: calc(4 / 14.4 * 1vw);
+  gap: calc(4 / 14.4 * min(1vw, 14.4px));
   margin: 0;
-  padding: calc(8 / 14.4 * 1vw);
+  padding: calc(8 / 14.4 * min(1vw, 14.4px));
   list-style: none;
   border: 1px solid var(--color-border-soft);
-  border-radius: calc(14 / 14.4 * 1vw);
+  border-radius: calc(14 / 14.4 * min(1vw, 14.4px));
   background: var(--color-surface);
   box-shadow: 0 12px 30px var(--color-shadow-brand);
 }
@@ -237,14 +237,14 @@
   display: block;
   width: 100% !important;
   box-sizing: border-box;
-  padding: calc(10 / 14.4 * 1vw) calc(12 / 14.4 * 1vw);
+  padding: calc(10 / 14.4 * min(1vw, 14.4px)) calc(12 / 14.4 * min(1vw, 14.4px));
   border: 0;
-  border-radius: calc(10 / 14.4 * 1vw);
+  border-radius: calc(10 / 14.4 * min(1vw, 14.4px));
   background: transparent;
   color: var(--text-primary);
   cursor: pointer;
   font: inherit;
-  font-size: calc(15 / 14.4 * 1vw);
+  font-size: calc(15 / 14.4 * min(1vw, 14.4px));
   text-align: left;
 }
 
@@ -260,7 +260,7 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .dds-contact-submit:hover { transform: translateY(calc(-2 / 14.4 * 1vw)); }
+  .dds-contact-submit:hover { transform: translateY(calc(-2 / 14.4 * min(1vw, 14.4px))); }
   .dds-contact-direct:hover { border-color: var(--text-primary); }
 }
 
