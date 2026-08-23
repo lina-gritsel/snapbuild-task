@@ -5,6 +5,7 @@
   gap: calc(40 / 14.4 * min(1vw, 14.4px));
   padding: calc(96 / 14.4 * min(1vw, 14.4px)) 0;
   color: var(--text-primary);
+  font-family: var(--font-primary);
 }
 
 .dds-testimonials-header {
@@ -63,6 +64,7 @@
 .dds-testimonials-featured-copy {
   display: flex;
   flex: 1;
+  min-width: 0;
   flex-direction: column;
   align-items: flex-start;
 }
@@ -78,8 +80,9 @@
 }
 
 .dds-testimonials-featured blockquote {
-  max-width: calc(760 / 14.4 * min(1vw, 14.4px));
+  width: 100%;
   margin: 0 0 auto;
+  font-family: inherit;
   font-size: calc(30 / 14.4 * min(1vw, 14.4px));
   font-weight: 500;
   line-height: 1.25;
@@ -125,11 +128,11 @@
 
 .dds-testimonials-metric {
   display: flex;
-  width: calc(310 / 14.4 * min(1vw, 14.4px));
+  width: calc(270 / 14.4 * min(1vw, 14.4px));
   flex: 0 0 auto;
   flex-direction: column;
   justify-content: flex-end;
-  padding-left: calc(40 / 14.4 * min(1vw, 14.4px));
+  padding-left: calc(32 / 14.4 * min(1vw, 14.4px));
   border-left: 1px solid var(--color-border-subtle);
 }
 

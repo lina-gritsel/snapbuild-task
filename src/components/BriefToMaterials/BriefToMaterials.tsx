@@ -34,9 +34,6 @@ export default function BriefToMaterials(): ReactElement {
               этап.
             </p>
           </div>
-          <span className="dds-control-state">
-            <i aria-hidden="true" /> Готово к публикации
-          </span>
         </header>
 
         <div className="dds-control-checks" aria-label="Этапы проверки материала">

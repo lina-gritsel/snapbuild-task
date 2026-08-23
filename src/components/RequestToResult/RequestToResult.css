@@ -126,7 +126,7 @@
   .dds-metrics-item { min-height: 0; gap: calc(40 / 3.75 * 1vw); padding: calc(24 / 3.75 * 1vw); }
   .dds-metrics-item + .dds-metrics-item { border-top: 1px solid var(--color-border-subtle); border-left: 0; }
   .dds-metrics-item::after { right: calc(24 / 3.75 * 1vw); left: calc(24 / 3.75 * 1vw); height: calc(2 / 3.75 * 1vw); }
-  .dds-metrics-value { font-size: calc(72 / 3.75 * 1vw); letter-spacing: calc(-3 / 3.75 * 1vw); }
+  .dds-metrics-value { font-size: calc(56 / 3.75 * 1vw); letter-spacing: calc(-2 / 3.75 * 1vw); }
   .dds-metrics-copy { gap: calc(6 / 3.75 * 1vw); }
   .dds-metrics-copy h3 { font-size: calc(18 / 3.75 * 1vw); }
   .dds-metrics-copy p { font-size: calc(14 / 3.75 * 1vw); }

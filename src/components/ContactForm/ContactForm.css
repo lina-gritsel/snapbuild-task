@@ -1,6 +1,7 @@
 .dds-contact {
   padding: calc(96 / 14.4 * min(1vw, 14.4px)) calc(40 / 14.4 * min(1vw, 14.4px));
   color: var(--text-primary);
+  font-family: var(--font-primary);
 }
 
 .dds-contact-shell {
@@ -108,7 +109,23 @@
   box-shadow: 0 0 0 3px var(--color-shadow-brand);
 }
 
+.dds-contact-field input[aria-invalid="true"],
+.dds-contact-field textarea[aria-invalid="true"] {
+  border-color: var(--color-brand-orange-strong);
+  box-shadow: 0 0 0 3px var(--color-shadow-brand);
+}
+
+.dds-contact-error {
+  margin: 0;
+  color: var(--color-brand-orange-strong);
+  font-size: calc(12 / 14.4 * min(1vw, 14.4px));
+  font-weight: 500;
+  line-height: 1.35;
+}
+
 .dds-contact-consent {
+  --dds-contact-checkbox-size: 16px;
+
   display: flex;
   align-items: flex-start;
   gap: calc(10 / 14.4 * min(1vw, 14.4px));
@@ -117,14 +134,21 @@
   line-height: 1.45;
 }
 
+.dds-contact-consent-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: calc(6 / 14.4 * min(1vw, 14.4px));
+}
+
 .dds-contact-consent input {
-  width: calc(16 / 14.4 * min(1vw, 14.4px));
-  height: calc(16 / 14.4 * min(1vw, 14.4px));
+  width: var(--dds-contact-checkbox-size);
+  height: var(--dds-contact-checkbox-size);
+  box-sizing: border-box;
   flex: 0 0 auto;
   margin: calc(1 / 14.4 * min(1vw, 14.4px)) 0 0;
   appearance: none;
   border: 1px solid var(--color-text-muted-alpha);
-  border-radius: calc(16 / 14.4 * min(1vw, 14.4px));
+  border-radius: 4px;
   background: var(--color-surface);
   cursor: pointer;
 }
@@ -141,6 +165,10 @@
 .dds-contact-consent input:focus-visible {
   outline: 3px solid var(--color-shadow-brand);
   outline-offset: 2px;
+}
+
+.dds-contact-consent input[aria-invalid="true"] {
+  border-color: var(--color-brand-orange-strong);
 }
 
 .dds-contact-consent a {
@@ -274,14 +302,16 @@
   .dds-contact-form { width: 100%; gap: calc(20 / 8.1 * 1vw); }
   .dds-contact-fields { gap: calc(16 / 8.1 * 1vw); }
   .dds-contact-field { gap: calc(8 / 8.1 * 1vw); font-size: calc(13 / 8.1 * 1vw); }
-  .dds-contact-field input { min-height: calc(52 / 8.1 * 1vw); padding: calc(14 / 8.1 * 1vw) calc(16 / 8.1 * 1vw); border-radius: calc(14 / 8.1 * 1vw); font-size: calc(15 / 8.1 * 1vw); }
+  .dds-contact-error { font-size: calc(12 / 8.1 * 1vw); }
+  .dds-contact-consent-wrap { gap: calc(6 / 8.1 * 1vw); }
+  .dds-contact-field input, .dds-contact-field textarea { min-height: calc(52 / 8.1 * 1vw); padding: calc(14 / 8.1 * 1vw) calc(16 / 8.1 * 1vw); border-radius: calc(14 / 8.1 * 1vw); font-size: calc(15 / 8.1 * 1vw); }
+  .dds-contact-field textarea { min-height: calc(112 / 8.1 * 1vw); }
   .dds-contact-topic-trigger { min-height: calc(52 / 8.1 * 1vw); padding: calc(14 / 8.1 * 1vw) calc(16 / 8.1 * 1vw); border-radius: calc(14 / 8.1 * 1vw); font-size: calc(15 / 8.1 * 1vw); }
   .dds-contact-topic-chevron { width: calc(9 / 8.1 * 1vw); height: calc(9 / 8.1 * 1vw); margin-right: calc(3 / 8.1 * 1vw); transform: rotate(45deg) translateY(calc(-2 / 8.1 * 1vw)); }
   .dds-contact-topic-trigger[aria-expanded="true"] .dds-contact-topic-chevron { transform: rotate(225deg) translateY(calc(-2 / 8.1 * 1vw)); }
   .dds-contact-topic-list { top: calc(100% + calc(8 / 8.1 * 1vw)); gap: calc(4 / 8.1 * 1vw); padding: calc(8 / 8.1 * 1vw); border-radius: calc(14 / 8.1 * 1vw); }
   .dds-contact-topic-list button { padding: calc(10 / 8.1 * 1vw) calc(12 / 8.1 * 1vw); border-radius: calc(10 / 8.1 * 1vw); font-size: calc(15 / 8.1 * 1vw); }
   .dds-contact-consent { gap: calc(10 / 8.1 * 1vw); font-size: calc(13 / 8.1 * 1vw); }
-  .dds-contact-consent input { width: calc(16 / 8.1 * 1vw); height: calc(16 / 8.1 * 1vw); }
   .dds-contact-submit { min-height: calc(52 / 8.1 * 1vw); padding: calc(14 / 8.1 * 1vw) calc(20 / 8.1 * 1vw); border-radius: calc(16 / 8.1 * 1vw); font-size: calc(15 / 8.1 * 1vw); }
   .dds-contact-submit-arrow { font-size: calc(18 / 8.1 * 1vw); }
 }
@@ -296,14 +326,16 @@
   .dds-contact-form { gap: calc(18 / 3.75 * 1vw); }
   .dds-contact-fields { grid-template-columns: 1fr; gap: calc(14 / 3.75 * 1vw); }
   .dds-contact-field { gap: calc(7 / 3.75 * 1vw); font-size: calc(13 / 3.75 * 1vw); }
-  .dds-contact-field input { min-height: calc(50 / 3.75 * 1vw); padding: calc(13 / 3.75 * 1vw) calc(14 / 3.75 * 1vw); border-radius: calc(14 / 3.75 * 1vw); font-size: calc(14 / 3.75 * 1vw); }
+  .dds-contact-error { font-size: calc(12 / 3.75 * 1vw); }
+  .dds-contact-consent-wrap { gap: calc(6 / 3.75 * 1vw); }
+  .dds-contact-field input, .dds-contact-field textarea { min-height: calc(50 / 3.75 * 1vw); padding: calc(13 / 3.75 * 1vw) calc(14 / 3.75 * 1vw); border-radius: calc(14 / 3.75 * 1vw); font-size: calc(14 / 3.75 * 1vw); }
+  .dds-contact-field textarea { min-height: calc(112 / 3.75 * 1vw); }
   .dds-contact-topic-trigger { min-height: calc(50 / 3.75 * 1vw); padding: calc(13 / 3.75 * 1vw) calc(14 / 3.75 * 1vw); border-radius: calc(14 / 3.75 * 1vw); font-size: calc(14 / 3.75 * 1vw); }
   .dds-contact-topic-chevron { width: calc(9 / 3.75 * 1vw); height: calc(9 / 3.75 * 1vw); margin-right: calc(3 / 3.75 * 1vw); transform: rotate(45deg) translateY(calc(-2 / 3.75 * 1vw)); }
   .dds-contact-topic-trigger[aria-expanded="true"] .dds-contact-topic-chevron { transform: rotate(225deg) translateY(calc(-2 / 3.75 * 1vw)); }
   .dds-contact-topic-list { top: calc(100% + calc(8 / 3.75 * 1vw)); gap: calc(4 / 3.75 * 1vw); padding: calc(8 / 3.75 * 1vw); border-radius: calc(14 / 3.75 * 1vw); }
   .dds-contact-topic-list button { padding: calc(10 / 3.75 * 1vw) calc(12 / 3.75 * 1vw); border-radius: calc(10 / 3.75 * 1vw); font-size: calc(14 / 3.75 * 1vw); }
   .dds-contact-consent { gap: calc(9 / 3.75 * 1vw); font-size: calc(12 / 3.75 * 1vw); }
-  .dds-contact-consent input { width: calc(16 / 3.75 * 1vw); height: calc(16 / 3.75 * 1vw); }
   .dds-contact-submit { min-height: calc(50 / 3.75 * 1vw); padding: calc(13 / 3.75 * 1vw) calc(16 / 3.75 * 1vw); border-radius: calc(15 / 3.75 * 1vw); font-size: calc(14 / 3.75 * 1vw); }
   .dds-contact-submit-arrow { font-size: calc(18 / 3.75 * 1vw); }
 }
