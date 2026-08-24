@@ -1,4 +1,15 @@
-const testimonials = [
+type PersonData = {
+  name: string
+  role: string
+  initials: string
+}
+
+type Testimonial = PersonData & {
+  quote: string
+  result: string
+}
+
+const testimonials: Testimonial[] = [
   {
     quote:
       'Раньше на запуск лендинга уходило две недели. Теперь собираем и согласовываем страницу за два дня.',
@@ -63,7 +74,7 @@ const testimonials = [
   },
 ]
 
-const featured = {
+const featured: PersonData & { quote: string } = {
   quote:
     'SnapBuild стал общей рабочей средой для маркетинга и дизайна. Мы выпускаем больше материалов, быстрее проверяем гипотезы и при этом не отступаем от бренд-системы.',
   name: 'Алексей Громов',
@@ -71,7 +82,11 @@ const featured = {
   initials: 'АГ',
 }
 
-function Person({ testimonial }) {
+type PersonProps = {
+  testimonial: PersonData
+}
+
+function Person({ testimonial }: PersonProps) {
   return (
     <div className="dds-testimonials-person">
       <span className="dds-testimonials-avatar" aria-hidden="true">
@@ -85,7 +100,11 @@ function Person({ testimonial }) {
   )
 }
 
-function ReviewCard({ testimonial }) {
+type ReviewCardProps = {
+  testimonial: Testimonial
+}
+
+function ReviewCard({ testimonial }: ReviewCardProps) {
   return (
     <article className="dds-testimonials-card">
       <p className="dds-testimonials-result">{testimonial.result}</p>
@@ -95,7 +114,12 @@ function ReviewCard({ testimonial }) {
   )
 }
 
-function ReviewRow({ items, reverse = false }) {
+type ReviewRowProps = {
+  items: Testimonial[]
+  reverse?: boolean
+}
+
+function ReviewRow({ items, reverse = false }: ReviewRowProps) {
   const loopItems = [...items, ...items]
   return (
     <div className={`dds-testimonials-row${reverse ? ' dds-testimonials-row--reverse' : ''}`}>

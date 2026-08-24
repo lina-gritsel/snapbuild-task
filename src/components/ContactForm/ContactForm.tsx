@@ -1,6 +1,12 @@
 'use client'
 
-import { useState, type ChangeEvent, type FocusEvent, type FormEvent, type ReactElement } from 'react'
+import {
+  useState,
+  type ChangeEvent,
+  type FocusEvent,
+  type FormEvent,
+  type ReactElement,
+} from 'react'
 
 const topics = ['Вопрос о продукте', 'Обсудить сотрудничество', 'Запросить демонстрацию', 'Другое']
 const fieldNames = ['name', 'email', 'message', 'consent'] as const
@@ -10,8 +16,10 @@ type FormErrors = Partial<Record<FieldName, string>>
 
 function validateField(name: FieldName, value: string, checked = false): string | undefined {
   if (name === 'name' && value.trim().length < 2) return 'Укажите имя'
-  if (name === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())) return 'Введите корректный e-mail'
-  if (name === 'message' && value.trim().length < 10) return 'Опишите задачу хотя бы в нескольких словах'
+  if (name === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()))
+    return 'Введите корректный e-mail'
+  if (name === 'message' && value.trim().length < 10)
+    return 'Опишите задачу хотя бы в нескольких словах'
   if (name === 'consent' && !checked) return 'Нужно согласиться с политикой конфиденциальности'
   return undefined
 }
@@ -56,14 +64,19 @@ export default function ContactForm(): ReactElement {
 
     fieldNames.forEach((name) => {
       const input = form.elements.namedItem(name) as HTMLInputElement | HTMLTextAreaElement | null
-      const error = validateField(name, input?.value ?? '', input instanceof HTMLInputElement && input.checked)
+      const error = validateField(
+        name,
+        input?.value ?? '',
+        input instanceof HTMLInputElement && input.checked,
+      )
       if (error) nextErrors[name] = error
     })
 
     setErrors(nextErrors)
     const firstInvalidField = fieldNames.find((name) => nextErrors[name])
     if (firstInvalidField) {
-      const input = form.elements.namedItem(firstInvalidField) as HTMLInputElement | HTMLTextAreaElement | null
+      const input = form.elements.namedItem(firstInvalidField) as
+        HTMLInputElement | HTMLTextAreaElement | null
       input?.focus()
       return
     }
@@ -112,7 +125,11 @@ export default function ContactForm(): ReactElement {
                 placeholder="Как к вам обращаться"
                 required
               />
-              {errors.name && <span className="dds-contact-error" id="dds-contact-name-error">{errors.name}</span>}
+              {errors.name && (
+                <span className="dds-contact-error" id="dds-contact-name-error">
+                  {errors.name}
+                </span>
+              )}
             </label>
             <label className="dds-contact-field">
               <span>Почта</span>
@@ -127,7 +144,11 @@ export default function ContactForm(): ReactElement {
                 placeholder="name@company.ru"
                 required
               />
-              {errors.email && <span className="dds-contact-error" id="dds-contact-email-error">{errors.email}</span>}
+              {errors.email && (
+                <span className="dds-contact-error" id="dds-contact-email-error">
+                  {errors.email}
+                </span>
+              )}
             </label>
             <div className="dds-contact-field dds-contact-field-wide">
               <span id="dds-contact-topic-label">Тема</span>
@@ -178,7 +199,11 @@ export default function ContactForm(): ReactElement {
                 placeholder="Расскажите, чем можем помочь"
                 required
               />
-              {errors.message && <span className="dds-contact-error" id="dds-contact-message-error">{errors.message}</span>}
+              {errors.message && (
+                <span className="dds-contact-error" id="dds-contact-message-error">
+                  {errors.message}
+                </span>
+              )}
             </label>
           </div>
 
@@ -200,7 +225,11 @@ export default function ContactForm(): ReactElement {
                 </a>
               </span>
             </label>
-            {errors.consent && <p className="dds-contact-error" id="dds-contact-consent-error">{errors.consent}</p>}
+            {errors.consent && (
+              <p className="dds-contact-error" id="dds-contact-consent-error">
+                {errors.consent}
+              </p>
+            )}
           </div>
 
           <button className="dds-contact-submit" type="submit" disabled={status === 'opening'}>

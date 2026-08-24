@@ -15,9 +15,10 @@ export default function Lightbox(): ReactElement | null {
       document.querySelector<HTMLImageElement>('#hero .dds-app-preview-shot'),
       document.querySelector<HTMLElement>('#use-cases .dds-tabs-panel'),
     ].filter((target): target is HTMLImageElement | HTMLElement => target !== null)
-    const openFromTarget = (event: MouseEvent) => {
+    const openFromTarget = (event: Event) => {
       if (!mobile.matches) return
-      const target = event.currentTarget as HTMLElement
+      const target = event.currentTarget
+      if (!(target instanceof HTMLElement)) return
       const image =
         target instanceof HTMLImageElement
           ? target
