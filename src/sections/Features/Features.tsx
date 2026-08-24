@@ -22,6 +22,8 @@ export default function Features(): ReactElement {
               alt={''}
               data-cms-image="features.why-safe.asset-1"
               aria-hidden="true"
+              loading="lazy"
+              decoding="async"
             />
           </picture>
           <div className="dds-why-safe-card">
@@ -60,6 +62,8 @@ export default function Features(): ReactElement {
               alt={''}
               data-cms-image="features.why-safe.asset-2"
               aria-hidden="true"
+              loading="lazy"
+              decoding="async"
             />
           </picture>
           <div className="dds-why-safe-card">
@@ -98,6 +102,8 @@ export default function Features(): ReactElement {
               alt={''}
               data-cms-image="features.why-safe.asset-3"
               aria-hidden="true"
+              loading="lazy"
+              decoding="async"
             />
           </picture>
           <div className="dds-why-safe-card">

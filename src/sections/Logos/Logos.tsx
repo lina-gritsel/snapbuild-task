@@ -31,6 +31,8 @@ export default function Logos(): ReactElement {
               data-cms-image="logos.marquee.asset-3"
               data-cms-no-generate
               alt={''}
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="dds-marquee-item dds-marquee-item-4">
@@ -42,6 +44,8 @@ export default function Logos(): ReactElement {
               data-cms-image="logos.marquee.asset-4"
               data-cms-no-generate
               alt={''}
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="dds-marquee-item dds-marquee-item-7">
@@ -53,6 +57,8 @@ export default function Logos(): ReactElement {
               data-cms-image="logos.marquee.asset-7"
               data-cms-no-generate
               alt={''}
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="dds-marquee-item dds-marquee-item-8">
@@ -64,6 +70,8 @@ export default function Logos(): ReactElement {
               data-cms-image="logos.marquee.asset-8"
               data-cms-no-generate
               alt={''}
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="dds-marquee-item dds-marquee-item-10">
@@ -75,6 +83,8 @@ export default function Logos(): ReactElement {
               data-cms-image="logos.marquee.asset-10"
               data-cms-no-generate
               alt={''}
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
@@ -86,6 +96,8 @@ export default function Logos(): ReactElement {
               width="100%"
               height="100%"
               alt={''}
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="dds-marquee-item dds-marquee-item-4">
@@ -95,6 +107,8 @@ export default function Logos(): ReactElement {
               width="100%"
               height="100%"
               alt={''}
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="dds-marquee-item dds-marquee-item-7">
@@ -104,6 +118,8 @@ export default function Logos(): ReactElement {
               width="100%"
               height="100%"
               alt={''}
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="dds-marquee-item dds-marquee-item-8">
@@ -113,6 +129,8 @@ export default function Logos(): ReactElement {
               width="100%"
               height="100%"
               alt={''}
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="dds-marquee-item dds-marquee-item-10">
@@ -122,6 +140,8 @@ export default function Logos(): ReactElement {
               width="100%"
               height="100%"
               alt={''}
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>

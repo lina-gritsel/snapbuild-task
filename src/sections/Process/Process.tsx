@@ -41,6 +41,8 @@ export default function Process(): ReactElement {
             data-cms-image="process.step1.image"
             alt={''}
             style={{ objectFit: 'cover' }}
+            loading="lazy"
+            decoding="async"
           />
           <div className="dds-steps-overlay">
             <div className="dds-steps-copy" style={{}}>
@@ -95,6 +97,8 @@ export default function Process(): ReactElement {
               data-cms-image="process.step2.image"
               alt={''}
               style={{}}
+              loading="lazy"
+              decoding="async"
             />
           </picture>
           <div className="dds-steps-overlay">
@@ -140,6 +144,8 @@ export default function Process(): ReactElement {
             className="dds-steps-media dds-steps-media--3"
             data-cms-image="process.step3.image"
             alt={''}
+            loading="lazy"
+            decoding="async"
           />
           <div className="dds-steps-overlay">
             <div className="dds-steps-copy" style={{}}>

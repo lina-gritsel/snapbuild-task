@@ -2,7 +2,7 @@ import type { ReactElement } from 'react'
 
 export default function Footer(): ReactElement {
   return (
-    <section
+    <footer
       className="footer dds-footer"
       data-cms-section="footer.main"
       data-section-id="019f8703-47cb-76e5-a38e-b7781f24944c"
@@ -30,6 +30,8 @@ export default function Footer(): ReactElement {
               alt="Снэпбилд"
               width={153}
               height={22}
+              loading="lazy"
+              decoding="async"
             />
           </a>
           <p className="dds-footer-tagline" data-cms-key="footer.tagline">
@@ -131,6 +133,8 @@ export default function Footer(): ReactElement {
           className="dds-footer-email"
           href="mailto:hey@snapbuild.ru"
           data-cms-link="footer.legal.email.href"
+          aria-hidden="true"
+          tabIndex={-1}
         />
         <a
           className="dds-footer-legal-email"
@@ -145,6 +149,6 @@ export default function Footer(): ReactElement {
           hey@snapbuild.ru
         </a>
       </div>
-    </section>
+    </footer>
   )
 }

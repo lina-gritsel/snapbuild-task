@@ -25,14 +25,9 @@
 #use-cases .dds-tabs-group {
   align-self: flex-start;
 }
-#uc-tab-4:checked ~ .dds-tabs-inner .dds-tabs-tab:nth-child(4),
-#uc-tab-5:checked ~ .dds-tabs-inner .dds-tabs-tab:nth-child(5) {
+#use-cases .dds-tabs-tab[aria-selected="true"] {
   background: var(--color-ink);
   color: var(--color-surface);
-}
-#uc-tab-4:checked ~ .dds-tabs-inner .dds-tabs-points-set--4,
-#uc-tab-5:checked ~ .dds-tabs-inner .dds-tabs-points-set--5 {
-  display: flex;
 }
 .dds-tabs-card,
 .dds-tabs-panel,
@@ -67,11 +62,15 @@
   border-bottom: 0;
   cursor: pointer;
   overflow: visible;
+  width: 100%;
+  font: inherit;
+  text-align: left;
 }
 #use-cases .dds-tabs-card:first-child {
   padding-top: 0;
 }
 #use-cases .dds-tabs-card-title {
+  width: 100%;
   margin: 0;
   font-weight: 600;
   font-size: calc(20 / 14.4 * 1vw);
@@ -124,6 +123,12 @@
   overflow: hidden;
   aspect-ratio: 995 / 558;
   background: var(--color-surface-deep);
+  width: 100%;
+  padding: 0;
+  border: 0;
+}
+#use-cases button.dds-tabs-panel {
+  cursor: zoom-in;
 }
 #use-cases .dds-tabs-media {
   position: absolute;
@@ -140,11 +145,7 @@
 #use-cases .dds-tabs-media--active {
   opacity: 1;
 }
-#uc-tab-1:checked ~ .dds-tabs-inner .dds-tabs-points-set--1,
-#uc-tab-2:checked ~ .dds-tabs-inner .dds-tabs-points-set--2,
-#uc-tab-3:checked ~ .dds-tabs-inner .dds-tabs-points-set--3,
-#uc-tab-4:checked ~ .dds-tabs-inner .dds-tabs-points-set--4,
-#uc-tab-5:checked ~ .dds-tabs-inner .dds-tabs-points-set--5 {
+#use-cases .dds-tabs-points-set--active {
   display: flex;
 }
 
@@ -164,10 +165,6 @@
   .dds-tabs-tab {
     flex: 0 0 auto;
   }
-  #uc-tab-4:checked ~ .dds-tabs-inner .dds-tabs-points-set--4,
-  #uc-tab-5:checked ~ .dds-tabs-inner .dds-tabs-points-set--5 {
-    display: flex;
-  }
   #use-cases .dds-tabs-body {
     display: flex;
     flex-direction: column;
@@ -176,11 +173,7 @@
   #use-cases .dds-tabs-points {
     display: contents;
   }
-  #uc-tab-1:checked ~ .dds-tabs-inner .dds-tabs-points-set--1,
-  #uc-tab-2:checked ~ .dds-tabs-inner .dds-tabs-points-set--2,
-  #uc-tab-3:checked ~ .dds-tabs-inner .dds-tabs-points-set--3,
-  #uc-tab-4:checked ~ .dds-tabs-inner .dds-tabs-points-set--4,
-  #uc-tab-5:checked ~ .dds-tabs-inner .dds-tabs-points-set--5 {
+  #use-cases .dds-tabs-points-set--active {
     display: contents;
   }
   #use-cases .dds-tabs-card {

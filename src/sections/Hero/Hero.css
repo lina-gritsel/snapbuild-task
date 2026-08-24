@@ -7,6 +7,12 @@
   height: auto;
   aspect-ratio: 16 / 9;
 }
+#hero .dds-preview-trigger {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
 #hero .dds-app-preview-shot,
 #hero img[data-cms-image="hero.app-screenshot"] {
   width: 100%;

@@ -1,15 +1,8 @@
-import {
-  useEffect,
-  useRef,
-  useState,
-  type ChangeEvent,
-  type KeyboardEvent as ReactKeyboardEvent,
-  type ReactElement,
-} from 'react'
+import { useEffect, useRef, useState, type ReactElement } from 'react'
 
 export default function Header(): ReactElement {
   const [menuOpen, setMenuOpen] = useState(false)
-  const burgerRef = useRef<HTMLLabelElement>(null)
+  const burgerRef = useRef<HTMLButtonElement>(null)
   const menuRef = useRef<HTMLElement>(null)
   const headerRef = useRef<HTMLElement>(null)
 
@@ -40,7 +33,7 @@ export default function Header(): ReactElement {
       const focusable = [
         burgerRef.current,
         ...Array.from(menuRef.current?.querySelectorAll<HTMLAnchorElement>('a[href]') ?? []),
-      ].filter((element): element is HTMLLabelElement | HTMLAnchorElement => element !== null)
+      ].filter((element): element is HTMLButtonElement | HTMLAnchorElement => element !== null)
       if (!focusable.length) return
       const first = focusable[0]
       const last = focusable[focusable.length - 1]
@@ -65,39 +58,20 @@ export default function Header(): ReactElement {
 
   const openMenu = () => {
     setMenuOpen(true)
-    requestAnimationFrame(() =>
-      menuRef.current?.querySelector<HTMLAnchorElement>('a[href]')?.focus(),
-    )
   }
 
   const closeMenu = () => setMenuOpen(false)
-  const handleToggleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    if (event.target.checked) openMenu()
-    else closeMenu()
-  }
-  const handleBurgerKeyDown = (event: ReactKeyboardEvent<HTMLLabelElement>) => {
-    if (event.key !== 'Enter' && event.key !== ' ') return
-    event.preventDefault()
-    setMenuOpen((current) => !current)
-  }
+  const toggleMenu = () => (menuOpen ? closeMenu() : openMenu())
 
   return (
-    <section
+    <header
       ref={headerRef}
-      className="header dds-header dds-main"
+      className={`header dds-header dds-main${menuOpen ? ' is-menu-open' : ''}`}
       data-cms-section="header.main"
       data-section-id="019f8703-47cb-75b5-a38e-b7781ba182e2"
       data-template-id="d79698c3-0022-5a62-bab3-44a94925e7c7"
       id="header"
     >
-      <input
-        className="dds-main-toggle"
-        id="dds-main-toggle"
-        type="checkbox"
-        aria-hidden="true"
-        checked={menuOpen}
-        onChange={handleToggleChange}
-      />
       <div className="dds-main-bar">
         <a
           className="dds-main-logo"
@@ -117,6 +91,8 @@ export default function Header(): ReactElement {
             alt="Снэпбилд"
             width="153"
             height="22"
+            loading="eager"
+            decoding="async"
           />
         </a>
         <nav className="dds-main-nav" aria-label="Основная навигация">
@@ -156,19 +132,17 @@ export default function Header(): ReactElement {
               Начать сейчас
             </span>
           </a>
-          <label
+          <button
             ref={burgerRef}
+            type="button"
             className="dds-main-burger"
-            htmlFor="dds-main-toggle"
-            role="button"
-            tabIndex={0}
             aria-controls="dds-main-menu"
             aria-expanded={menuOpen}
             aria-label={menuOpen ? 'Закрыть меню' : 'Открыть меню'}
-            onKeyDown={handleBurgerKeyDown}
+            onClick={toggleMenu}
           >
-            <span className="dds-main-burger-icon" />
-          </label>
+            <span className="dds-main-burger-icon" aria-hidden="true" />
+          </button>
         </div>
       </div>
       <nav
@@ -238,6 +212,6 @@ export default function Header(): ReactElement {
           </span>
         </a>
       </nav>
-    </section>
+    </header>
   )
 }

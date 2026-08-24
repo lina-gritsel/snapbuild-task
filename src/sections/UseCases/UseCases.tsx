@@ -1,5 +1,5 @@
-import { useState, type KeyboardEvent, type ReactElement } from 'react'
-import { canOpenMobileLightbox } from '../../shared/lib/media'
+import { useRef, useState, type KeyboardEvent, type ReactElement } from 'react'
+import { MOBILE_LIGHTBOX_QUERY, useMediaQuery } from '../../shared/lib/media'
 import type { LightboxContent } from '../../shared/ui/Lightbox/Lightbox.types'
 import {
   useCaseTabs,
@@ -27,6 +27,8 @@ type UseCasesProps = {
 export default function UseCases({ onPreview }: UseCasesProps): ReactElement {
   const [activeTabId, setActiveTabId] = useState<UseCaseTabId>(useCaseTabs[0].id)
   const [activeItems, setActiveItems] = useState<ActiveItems>(initialActiveItems)
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([])
+  const mobilePreviewEnabled = useMediaQuery(MOBILE_LIGHTBOX_QUERY)
 
   const activeTab = useCaseTabs.find((tab) => tab.id === activeTabId) ?? useCaseTabs[0]
   const activeItem =
@@ -36,18 +38,27 @@ export default function UseCases({ onPreview }: UseCasesProps): ReactElement {
     setActiveItems((current) => ({ ...current, [tabId]: itemId }))
   }
 
-  const handleCardKeyDown = (
-    event: KeyboardEvent<HTMLElement>,
-    tabId: UseCaseTabId,
-    itemId: UseCaseItemId,
-  ) => {
-    if (event.key !== 'Enter' && event.key !== ' ') return
+  const selectTab = (tabId: UseCaseTabId, index: number) => {
+    setActiveTabId(tabId)
+    tabRefs.current[index]?.focus()
+  }
+
+  const handleTabKeyDown = (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
+    const lastIndex = useCaseTabs.length - 1
+    let nextIndex: number | undefined
+
+    if (event.key === 'ArrowRight') nextIndex = index === lastIndex ? 0 : index + 1
+    if (event.key === 'ArrowLeft') nextIndex = index === 0 ? lastIndex : index - 1
+    if (event.key === 'Home') nextIndex = 0
+    if (event.key === 'End') nextIndex = lastIndex
+    if (nextIndex === undefined) return
+
     event.preventDefault()
-    selectItem(tabId, itemId)
+    selectTab(useCaseTabs[nextIndex].id, nextIndex)
   }
 
   const openPreview = () => {
-    if (!canOpenMobileLightbox()) return
+    if (!mobilePreviewEnabled) return
 
     onPreview({
       src: activeItem.image,
@@ -65,18 +76,6 @@ export default function UseCases({ onPreview }: UseCasesProps): ReactElement {
       data-template-id="ad505775-7616-5cfe-b331-f54469d638ec"
       id="use-cases"
     >
-      {useCaseTabs.map((tab) => (
-        <input
-          key={tab.id}
-          type="radio"
-          name="uc-tabs"
-          id={`uc-tab-${tab.index}`}
-          className="dds-tabs-radio"
-          checked={activeTabId === tab.id}
-          onChange={() => setActiveTabId(tab.id)}
-        />
-      ))}
-
       <div className="dds-tabs-inner">
         <div className="dds-tabs-header">
           <h2 className="dds-tabs-title">
@@ -89,16 +88,22 @@ export default function UseCases({ onPreview }: UseCasesProps): ReactElement {
           </h2>
 
           <div className="dds-tabs-group" role="tablist" aria-label="Форматы контента">
-            {useCaseTabs.map((tab) => (
+            {useCaseTabs.map((tab, index) => (
               <button
                 key={tab.id}
+                ref={(element) => {
+                  tabRefs.current[index] = element
+                }}
                 type="button"
                 className="dds-tabs-tab"
                 data-cms-key={getTabCmsKey(tab)}
                 role="tab"
+                id={`uc-tab-button-${tab.index}`}
                 aria-selected={activeTabId === tab.id}
                 aria-controls={`uc-panel-${tab.index}`}
+                tabIndex={activeTabId === tab.id ? 0 : -1}
                 onClick={() => setActiveTabId(tab.id)}
+                onKeyDown={(event) => handleTabKeyDown(event, index)}
               >
                 {tab.label}
               </button>
@@ -111,60 +116,86 @@ export default function UseCases({ onPreview }: UseCasesProps): ReactElement {
             {useCaseTabs.map((tab) => (
               <div
                 key={tab.id}
-                className={`dds-tabs-points-set dds-tabs-points-set--${tab.index}`}
+                className={`dds-tabs-points-set dds-tabs-points-set--${tab.index}${activeTabId === tab.id ? ' dds-tabs-points-set--active' : ''}`}
                 id={`uc-panel-${tab.index}`}
                 role="tabpanel"
+                aria-labelledby={`uc-tab-button-${tab.index}`}
                 aria-hidden={activeTabId !== tab.id}
               >
                 {tab.items.map((item) => {
                   const isActive = activeItems[tab.id] === item.id
 
                   return (
-                    <article
+                    <button
                       key={item.id}
+                      type="button"
                       className={`dds-tabs-card${isActive ? ' dds-tabs-card--active' : ''}`}
                       data-media={item.id}
-                      role="button"
                       tabIndex={activeTabId === tab.id ? 0 : -1}
                       aria-pressed={isActive}
                       onClick={() => selectItem(tab.id, item.id)}
-                      onKeyDown={(event) => handleCardKeyDown(event, tab.id, item.id)}
                     >
-                      <h3 className="dds-tabs-card-title" data-cms-key={getItemTitleCmsKey(item)}>
+                      <span className="dds-tabs-card-title" data-cms-key={getItemTitleCmsKey(item)}>
                         {item.title}
-                      </h3>
-                      <p
+                      </span>
+                      <span
                         className="dds-tabs-card-desc"
                         data-cms-key={getItemDescriptionCmsKey(item)}
                       >
                         <span>{item.description}</span>
-                      </p>
-                      <div className="dds-tabs-card-progress">
-                        <div className="dds-tabs-card-progress-fill" />
-                      </div>
-                    </article>
+                      </span>
+                      <span className="dds-tabs-card-progress" aria-hidden="true">
+                        <span className="dds-tabs-card-progress-fill" />
+                      </span>
+                    </button>
                   )
                 })}
               </div>
             ))}
           </div>
 
-          <div className="dds-tabs-panel" onClick={openPreview}>
-            {useCaseTabs.flatMap((tab) =>
-              tab.items.map((item) => (
-                <img
-                  key={item.id}
-                  className={`dds-tabs-media dds-tabs-media--${item.id}${activeItem.id === item.id ? ' dds-tabs-media--active' : ''}`}
-                  data-media={item.id}
-                  src={item.image}
-                  alt=""
-                  width={2880}
-                  height={1620}
-                  loading={item.id === useCaseTabs[0].items[0].id ? 'eager' : 'lazy'}
-                />
-              )),
-            )}
-          </div>
+          {mobilePreviewEnabled ? (
+            <button
+              type="button"
+              className="dds-tabs-panel"
+              aria-label={`Открыть изображение: ${activeItem.title}`}
+              onClick={openPreview}
+            >
+              {useCaseTabs.flatMap((tab) =>
+                tab.items.map((item) => (
+                  <img
+                    key={item.id}
+                    className={`dds-tabs-media dds-tabs-media--${item.id}${activeItem.id === item.id ? ' dds-tabs-media--active' : ''}`}
+                    data-media={item.id}
+                    src={item.image}
+                    alt=""
+                    width={2880}
+                    height={1620}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                )),
+              )}
+            </button>
+          ) : (
+            <div className="dds-tabs-panel">
+              {useCaseTabs.flatMap((tab) =>
+                tab.items.map((item) => (
+                  <img
+                    key={item.id}
+                    className={`dds-tabs-media dds-tabs-media--${item.id}${activeItem.id === item.id ? ' dds-tabs-media--active' : ''}`}
+                    data-media={item.id}
+                    src={item.image}
+                    alt=""
+                    width={2880}
+                    height={1620}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                )),
+              )}
+            </div>
+          )}
         </div>
       </div>
     </section>

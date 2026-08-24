@@ -26,8 +26,6 @@ function validateField(name: FieldName, value: string, checked = false): string 
 
 export default function ContactForm(): ReactElement {
   const [status, setStatus] = useState('idle')
-  const [topic, setTopic] = useState(topics[0])
-  const [topicListOpen, setTopicListOpen] = useState(false)
   const [errors, setErrors] = useState<FormErrors>({})
 
   const validateControl = (name: FieldName, value: string, checked = false) => {
@@ -150,43 +148,17 @@ export default function ContactForm(): ReactElement {
                 </span>
               )}
             </label>
-            <div className="dds-contact-field dds-contact-field-wide">
-              <span id="dds-contact-topic-label">Тема</span>
+            <label className="dds-contact-field dds-contact-field-wide">
+              <span>Тема</span>
               <div className="dds-contact-topic-select">
-                <input name="topic" type="hidden" value={topic} />
-                <button
-                  type="button"
-                  className="dds-contact-topic-trigger"
-                  aria-labelledby="dds-contact-topic-label"
-                  aria-haspopup="listbox"
-                  aria-expanded={topicListOpen}
-                  onClick={() => setTopicListOpen((open) => !open)}
-                >
-                  <span>{topic}</span>
-                  <span className="dds-contact-topic-chevron" aria-hidden="true" />
-                </button>
-                {topicListOpen && (
-                  <ul className="dds-contact-topic-list" role="listbox" aria-label="Тема">
-                    {topics.map((item) => (
-                      <li key={item} role="presentation">
-                        <button
-                          type="button"
-                          role="option"
-                          aria-selected={item === topic}
-                          className={item === topic ? 'is-selected' : undefined}
-                          onClick={() => {
-                            setTopic(item)
-                            setTopicListOpen(false)
-                          }}
-                        >
-                          {item}
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                <select name="topic" className="dds-contact-topic-trigger" defaultValue={topics[0]}>
+                  {topics.map((item) => (
+                    <option key={item}>{item}</option>
+                  ))}
+                </select>
+                <span className="dds-contact-topic-chevron" aria-hidden="true" />
               </div>
-            </div>
+            </label>
             <label className="dds-contact-field dds-contact-field-wide">
               <span>Сообщение</span>
               <textarea

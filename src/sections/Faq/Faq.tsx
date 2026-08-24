@@ -1,4 +1,4 @@
-import { Fragment, type ReactElement } from 'react'
+import { Fragment, useState, type ReactElement } from 'react'
 import { faqColumns, type FaqItem } from './Faq.data'
 
 const faqIcon = 'assets/images/c2663c497fb468e1.webp'
@@ -24,26 +24,30 @@ function FaqAnswer({ answer }: Pick<FaqItem, 'answer'>): ReactElement {
 }
 
 function FaqEntry({ item }: { item: FaqItem }): ReactElement {
-  const inputId = `dds-faq-${item.index}`
+  const buttonId = `dds-faq-${item.index}-button`
+  const panelId = `dds-faq-${item.index}-panel`
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <div
-      className="dds-accordion-item"
+      className={`dds-accordion-item${isOpen ? ' is-open' : ''}`}
       data-cms-node={`faq.accordion.item-${item.index}`}
       data-cms-interaction="disclosure"
       data-label={`Вопрос FAQ ${item.index}`}
     >
-      <input
-        type="checkbox"
-        id={inputId}
-        className="dds-accordion-state"
+      <button
+        className="dds-accordion-head"
+        type="button"
+        id={buttonId}
+        aria-expanded={isOpen}
+        aria-controls={panelId}
         data-cms-interaction-control
-      />
-      <label className="dds-accordion-head" htmlFor={inputId}>
-        <p className="dds-accordion-question" data-cms-key={`faq.q${item.index}`}>
+        onClick={() => setIsOpen((open) => !open)}
+      >
+        <span className="dds-accordion-question" data-cms-key={`faq.q${item.index}`}>
           {item.question}
-        </p>
-        <span className="dds-accordion-icon">
+        </span>
+        <span className="dds-accordion-icon" aria-hidden="true">
           <img
             src={faqIcon}
             style={{ display: 'block', objectFit: 'fill' }}
@@ -52,10 +56,18 @@ function FaqEntry({ item }: { item: FaqItem }): ReactElement {
             data-cms-image={`faq.accordion.asset-${item.index}`}
             data-cms-no-generate
             alt=""
+            loading="lazy"
+            decoding="async"
           />
         </span>
-      </label>
-      <div className="dds-accordion-panel">
+      </button>
+      <div
+        className="dds-accordion-panel"
+        id={panelId}
+        role="region"
+        aria-labelledby={buttonId}
+        aria-hidden={!isOpen}
+      >
         <p className="dds-accordion-answer" data-cms-key={`faq.a${item.index}`}>
           <FaqAnswer answer={item.answer} />
         </p>

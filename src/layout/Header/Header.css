@@ -1,0 +1,52 @@
+@media (max-width: 1023px) {
+  #header.is-menu-open .dds-main-bar {
+    box-shadow: none;
+  }
+
+  #header.is-menu-open .dds-main-demo {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  #header.is-menu-open .dds-main-menu {
+    display: flex;
+    animation: dds-menu-panel-in 140ms ease both;
+  }
+
+  #header.is-menu-open .dds-main-menu-link {
+    animation: dds-menu-item-in 260ms var(--ease-entrance) both;
+  }
+
+  #header.is-menu-open .dds-main-menu-link:nth-child(1) { animation-delay: 40ms; }
+  #header.is-menu-open .dds-main-menu-link:nth-child(2) { animation-delay: 85ms; }
+  #header.is-menu-open .dds-main-menu-link:nth-child(3) { animation-delay: 130ms; }
+  #header.is-menu-open .dds-main-menu-link:nth-child(4) { animation-delay: 175ms; }
+  #header.is-menu-open .dds-main-menu-link:nth-child(5) { animation-delay: 220ms; }
+
+  #header.is-menu-open .dds-main-menu .dds-btn {
+    animation: dds-menu-cta-in 280ms var(--ease-entrance) 200ms both;
+  }
+
+  #header.is-menu-open .dds-main-burger-icon {
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+  }
+
+  #header.is-menu-open .dds-main-burger-icon::before {
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  #header.is-menu-open .dds-main-burger-icon::after {
+    opacity: 1;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #header.is-menu-open .dds-main-menu,
+  #header.is-menu-open .dds-main-menu-link,
+  #header.is-menu-open .dds-main-menu .dds-btn {
+    animation: none;
+  }
+}

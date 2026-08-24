@@ -10,9 +10,10 @@ export default function Compare(): ReactElement {
       data-section-type="compare"
       data-section-name="Сравнение — Преимущества"
       id="compare"
+      aria-labelledby="compare-title"
     >
       <header className="dds-benefit-header">
-        <h2 className="dds-benefit-title" data-cms-key="compare.title">
+        <h2 className="dds-benefit-title" id="compare-title" data-cms-key="compare.title">
           Почему команды выбирают Снэпбилд
         </h2>
         <p className="dds-benefit-subtitle" data-cms-key="compare.subtitle" style={{}}>
@@ -21,79 +22,79 @@ export default function Compare(): ReactElement {
         </p>
       </header>
       <div className="dds-benefit-scroll">
-        <div className="sds-compare-table" role="table">
+        <div className="sds-compare-table" role="table" aria-label="Сравнение решений">
           <div className="sds-compare-brand-border" aria-hidden="true" />
           <div className="sds-compare-row sds-compare-row--head" role="row">
-            <div className="sds-compare-cell sds-compare-cell--label">
+            <div className="sds-compare-cell sds-compare-cell--label" role="columnheader">
               <span data-cms-key="compare.head.feature">Особенности</span>
             </div>
-            <div className="sds-compare-cell">
+            <div className="sds-compare-cell" role="columnheader">
               <span className="sds-compare-brandname" data-cms-key="compare.head.brand">
                 снэпбилд
               </span>
             </div>
-            <div className="sds-compare-cell">
+            <div className="sds-compare-cell" role="columnheader">
               <span data-cms-key="compare.head.c1">Claude + Figma MCP</span>
             </div>
-            <div className="sds-compare-cell sds-compare-cell--narrow">
+            <div className="sds-compare-cell sds-compare-cell--narrow" role="columnheader">
               <span data-cms-key="compare.head.c2">No-code платформы</span>
             </div>
-            <div className="sds-compare-cell">
+            <div className="sds-compare-cell" role="columnheader">
               <span data-cms-key="compare.head.c3">Cursor</span>
             </div>
-            <div className="sds-compare-cell">
+            <div className="sds-compare-cell" role="columnheader">
               <span data-cms-key="compare.head.c4">Традиционный</span>
             </div>
           </div>
           <div className="sds-compare-row" role="row">
-            <div className="sds-compare-cell sds-compare-cell--label">
+            <div className="sds-compare-cell sds-compare-cell--label" role="rowheader">
               <span data-cms-key="compare.r1.label">Time-to-market</span>
             </div>
-            <div className="sds-compare-cell">
+            <div className="sds-compare-cell" role="cell">
               <span data-cms-key="compare.r1.brand">5 минут</span>
             </div>
-            <div className="sds-compare-cell">
+            <div className="sds-compare-cell" role="cell">
               <span data-cms-key="compare.r1.c1">30–60 мин</span>
             </div>
-            <div className="sds-compare-cell">
+            <div className="sds-compare-cell" role="cell">
               <span data-cms-key="compare.r1.c2">2–3 дня</span>
             </div>
-            <div className="sds-compare-cell">
+            <div className="sds-compare-cell" role="cell">
               <span data-cms-key="compare.r1.c3">1–2 дня</span>
             </div>
-            <div className="sds-compare-cell">
+            <div className="sds-compare-cell" role="cell">
               <span data-cms-key="compare.r1.c4">3–5 недель</span>
             </div>
           </div>
           <div className="sds-compare-row" role="row">
-            <div className="sds-compare-cell sds-compare-cell--label">
+            <div className="sds-compare-cell sds-compare-cell--label" role="rowheader">
               <span data-cms-key="compare.r2.label">Дизайн-система</span>
             </div>
-            <div className="sds-compare-cell">
+            <div className="sds-compare-cell" role="cell">
               <span data-cms-key="compare.r2.brand">
                 100%
                 <br />
                 точность
               </span>
             </div>
-            <div className="sds-compare-cell">
+            <div className="sds-compare-cell" role="cell">
               <span data-cms-key="compare.r2.c1">Частично, из&nbsp;Figma</span>
             </div>
-            <div className="sds-compare-cell">
+            <div className="sds-compare-cell" role="cell">
               <span data-cms-key="compare.r2.c2">Шаблоны</span>
             </div>
-            <div className="sds-compare-cell">
+            <div className="sds-compare-cell" role="cell">
               <span data-cms-key="compare.r2.c3">Вручную в&nbsp;коде</span>
             </div>
-            <div className="sds-compare-cell">
+            <div className="sds-compare-cell" role="cell">
               <span data-cms-key="compare.r2.c4">Вручную, через ревью</span>
             </div>
           </div>
           <div className="sds-compare-row" role="row">
-            <div className="sds-compare-cell sds-compare-cell--label">
+            <div className="sds-compare-cell sds-compare-cell--label" role="rowheader">
               <span data-cms-key="compare.r3.label">Визуальный редактор</span>
             </div>
-            <div className="sds-compare-cell">
+            <div className="sds-compare-cell" role="cell">
               <span className="sds-check">
                 <img
                   src="assets/images/a4ce0581ce7807b6.svg"
@@ -102,43 +103,52 @@ export default function Compare(): ReactElement {
                   alt={''}
                   width="100%"
                   height="100%"
+                  loading="lazy"
+                  decoding="async"
                 />
               </span>
               <span data-cms-key="compare.r3.brand">+ ИИ</span>
             </div>
-            <div className="sds-compare-cell">
+            <div className="sds-compare-cell" role="cell">
               <span data-cms-key="compare.r3.c1">—</span>
             </div>
-            <div className="sds-compare-cell">
+            <div className="sds-compare-cell" role="cell">
               <span className="sds-check">
-                <img src="assets/images/a4ce0581ce7807b6.svg" alt={''} width="100%" height="100%" />
+                <img
+                  src="assets/images/a4ce0581ce7807b6.svg"
+                  alt={''}
+                  width="100%"
+                  height="100%"
+                  loading="lazy"
+                  decoding="async"
+                />
               </span>
               <span data-cms-key="compare.r3.c2" />
             </div>
-            <div className="sds-compare-cell">
+            <div className="sds-compare-cell" role="cell">
               <span data-cms-key="compare.r3.c3">—</span>
             </div>
-            <div className="sds-compare-cell">
+            <div className="sds-compare-cell" role="cell">
               <span data-cms-key="compare.r3.c4">—</span>
             </div>
           </div>
           <div className="sds-compare-row" role="row">
-            <div className="sds-compare-cell sds-compare-cell--label">
+            <div className="sds-compare-cell sds-compare-cell--label" role="rowheader">
               <span data-cms-key="compare.r4.label">Требуемые навыки</span>
             </div>
-            <div className="sds-compare-cell">
+            <div className="sds-compare-cell" role="cell">
               <span data-cms-key="compare.r4.brand">Нет</span>
             </div>
-            <div className="sds-compare-cell">
+            <div className="sds-compare-cell" role="cell">
               <span data-cms-key="compare.r4.c1">Промпты + код</span>
             </div>
-            <div className="sds-compare-cell">
+            <div className="sds-compare-cell" role="cell">
               <span data-cms-key="compare.r4.c2">Дизайн</span>
             </div>
-            <div className="sds-compare-cell">
+            <div className="sds-compare-cell" role="cell">
               <span data-cms-key="compare.r4.c3">Разработка</span>
             </div>
-            <div className="sds-compare-cell">
+            <div className="sds-compare-cell" role="cell">
               <span data-cms-key="compare.r4.c4">Полная команда</span>
             </div>
           </div>

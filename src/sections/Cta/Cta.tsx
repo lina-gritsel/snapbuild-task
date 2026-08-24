@@ -18,6 +18,8 @@ export default function Cta(): ReactElement {
           data-cms-image="cta.launch.dust-d"
           data-cms-no-generate
           alt={''}
+          loading="lazy"
+          decoding="async"
         />
         <img
           className="dds-launch-dust--t"
@@ -25,6 +27,8 @@ export default function Cta(): ReactElement {
           data-cms-image="cta.launch.dust-t"
           data-cms-no-generate
           alt={''}
+          loading="lazy"
+          decoding="async"
         />
         <img
           className="dds-launch-dust--m"
@@ -32,6 +36,8 @@ export default function Cta(): ReactElement {
           data-cms-image="cta.launch.dust-m"
           data-cms-no-generate
           alt={''}
+          loading="lazy"
+          decoding="async"
         />
       </div>
       <div className="dds-launch-shine" aria-hidden="true" />

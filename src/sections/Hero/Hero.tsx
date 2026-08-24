@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react'
-import { canOpenMobileLightbox } from '../../shared/lib/media'
+import { MOBILE_LIGHTBOX_QUERY, useMediaQuery } from '../../shared/lib/media'
 import type { LightboxContent } from '../../shared/ui/Lightbox/Lightbox.types'
 
 const heroTitle = 'Платформа, где все создается в рамках вашего бренда и дизайн-системы'
@@ -12,9 +12,9 @@ type HeroProps = {
 }
 
 export default function Hero({ onPreview }: HeroProps): ReactElement {
-  const openPreview = () => {
-    if (!canOpenMobileLightbox()) return
+  const mobilePreviewEnabled = useMediaQuery(MOBILE_LIGHTBOX_QUERY)
 
+  const openPreview = () => {
     onPreview({
       src: heroImage,
       alt: '',
@@ -22,6 +22,21 @@ export default function Hero({ onPreview }: HeroProps): ReactElement {
       description: heroDescription,
     })
   }
+
+  const previewImage = (
+    <img
+      className="dds-app-preview-shot"
+      data-cms-image="hero.app-screenshot"
+      data-cms-no-generate=""
+      src={heroImage}
+      alt=""
+      width={2880}
+      height={1620}
+      loading="eager"
+      fetchPriority="high"
+      decoding="async"
+    />
+  )
 
   return (
     <section
@@ -57,16 +72,18 @@ export default function Hero({ onPreview }: HeroProps): ReactElement {
               </span>
             </a>
           </div>
-          <div className="dds-app-preview-media">
-            <img
-              className="dds-app-preview-shot"
-              data-cms-image="hero.app-screenshot"
-              data-cms-no-generate=""
-              src={heroImage}
-              alt=""
+          {mobilePreviewEnabled ? (
+            <button
+              type="button"
+              className="dds-app-preview-media dds-preview-trigger"
+              aria-label="Открыть изображение платформы"
               onClick={openPreview}
-            />
-          </div>
+            >
+              {previewImage}
+            </button>
+          ) : (
+            <div className="dds-app-preview-media">{previewImage}</div>
+          )}
         </div>
       </div>
     </section>
