@@ -6,7 +6,7 @@ import './sections/Process/Process.css'
 import './sections/Compare/Compare.css'
 import './sections/Cta/Cta.css'
 import './sections/UseCases/UseCases.css'
-import './styles/generated-layout.css'
+import './styles/legacy/generated-layout.css'
 import './sections/Features/Features.css'
 import './sections/Roadmap/Roadmap.css'
 import './sections/RequestToResult/RequestToResult.css'
@@ -19,7 +19,7 @@ import './sections/Hero/Hero.css'
 import './sections/Logos/Logos.css'
 import './styles/font-face.css'
 import './styles/motion.css'
-import './styles/overrides.css'
+import './styles/legacy/compat.css'
 
 const rootElement = document.getElementById('root')
 

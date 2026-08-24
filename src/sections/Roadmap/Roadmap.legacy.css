@@ -1,0 +1,42 @@
+/* Legacy compatibility patches owned by this module. Add new styles to the primary module CSS file. */
+
+#roadmap .dds-rmap-title {
+  font-weight: 500 !important;
+}
+
+#roadmap .dds-rmap-name {
+  font-weight: 500 !important;
+}
+
+#roadmap .dds-rmap-track::after {
+  display: block;
+  width: calc(var(--dds-rmap-progress, 0) * var(--dds-rmap-col) + calc(4 / 14.4 * 1vw));
+}
+
+#roadmap .dds-rmap-track {
+  /* Keep the physical padding and the line origin on the same responsive
+     variable. A legacy tablet layout rule used a 768px reference for the
+     padding while the roadmap itself uses 810px, shifting the line by 1px. */
+  padding-inline: var(--dds-rmap-pad);
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  #roadmap .dds-rmap-track::after {
+    width: calc(var(--dds-rmap-progress, 0) * var(--dds-rmap-col) + calc(4 / 8.1 * 1vw));
+  }
+}
+
+@media (max-width: 767px) {
+
+  #roadmap .dds-rmap-subtitle {
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 0;
+  }
+
+  #roadmap .dds-rmap-track::after {
+    width: calc(var(--dds-rmap-progress, 0) * var(--dds-rmap-col) + calc(4 / 3.75 * 1vw));
+  }
+}

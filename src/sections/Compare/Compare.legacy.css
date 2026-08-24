@@ -1,0 +1,133 @@
+/* Legacy compatibility patches owned by this module. Add new styles to the primary module CSS file. */
+
+#compare .dds-benefit-title {
+  font-weight: 500 !important;
+}
+
+@media (max-width: 767px) {
+
+  #compare .dds-benefit-subtitle {
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 0;
+  }
+
+  #compare .dds-benefit-scroll {
+    --dds-compare-divider: var(--color-divider);
+    position: relative;
+    isolation: isolate;
+    padding-inline: 0;
+    background-color: var(--color-surface);
+  }
+
+  #compare .sds-compare-table {
+    overflow: visible;
+    border-radius: 0;
+    background-color: var(--color-surface);
+    grid-template-columns: calc(90 / 3.75 * 1vw) calc(100 / 3.75 * 1vw) repeat(3, calc(120 / 3.75 * 1vw)) calc(140 / 3.75 * 1vw);
+    /* Match the surface to the sum of its tracks. The exported 720px width
+       leaves a 30px empty phase after the final column. */
+    width: calc(690 / 3.75 * 1vw);
+  }
+
+  #compare .sds-compare-cell {
+    background-color: var(--color-surface);
+  }
+
+  /* The exported dividers use alpha. Under the sticky columns that exposes
+     the moving cells and makes one divider look doubled while scrolling. */
+  #compare .sds-compare-cell:nth-child(3),
+#compare .sds-compare-cell:nth-child(4),
+#compare .sds-compare-cell:nth-child(5) {
+    border-right-color: var(--dds-compare-divider);
+  }
+
+  #compare .sds-compare-row--head .sds-compare-cell {
+    border-bottom-color: var(--dds-compare-divider);
+  }
+
+  #compare [data-cms-key="compare.r2.c4"] {
+    white-space: normal;
+  }
+
+  #compare .sds-compare-row--head .sds-compare-cell--label > * {
+    visibility: hidden;
+  }
+
+  #compare .sds-compare-brand-border {
+    display: none;
+  }
+
+  #compare .sds-compare-row > .sds-compare-cell:nth-child(1),
+#compare .sds-compare-row > .sds-compare-cell:nth-child(2) {
+    position: sticky;
+    z-index: 3;
+    background-color: var(--color-surface);
+    background-clip: padding-box;
+    isolation: isolate;
+  }
+
+  #compare .sds-compare-row > .sds-compare-cell:nth-child(1) {
+    left: 0;
+  }
+
+  #compare .sds-compare-row > .sds-compare-cell:nth-child(2) {
+    left: calc(90 / 3.75 * 1vw);
+    border-inline: calc(2 / 3.75 * 1vw) solid var(--color-transparent);
+    background-image:
+      linear-gradient(var(--color-surface), var(--color-surface)),
+      linear-gradient(180deg, var(--color-brand-orange-strong) 0%, var(--color-brand-pink-strong) 52%, var(--color-brand-purple) 100%);
+    background-origin: padding-box, border-box;
+    background-clip: padding-box, border-box;
+    background-repeat: no-repeat, no-repeat;
+    /* Row heights are fixed (60 head + 4 × 72), so the border gradient is drawn once
+       at full column height and each row shows its own vertical slice of it —
+       avoids the gradient restarting per-row (striped look). */
+    background-size: 100% 100%, 100% calc(348 / 3.75 * 1vw);
+    background-position: 0 0, 0 0;
+  }
+
+  #compare .sds-compare-row--head + .sds-compare-row > .sds-compare-cell:nth-child(2) {
+    background-position: 0 0, 0 calc(-60 / 3.75 * 1vw);
+  }
+
+  #compare .sds-compare-row--head + .sds-compare-row + .sds-compare-row > .sds-compare-cell:nth-child(2) {
+    background-position: 0 0, 0 calc(-132 / 3.75 * 1vw);
+  }
+
+  #compare .sds-compare-row--head + .sds-compare-row + .sds-compare-row + .sds-compare-row > .sds-compare-cell:nth-child(2) {
+    background-position: 0 0, 0 calc(-204 / 3.75 * 1vw);
+  }
+
+  #compare .sds-compare-row--head + .sds-compare-row + .sds-compare-row + .sds-compare-row + .sds-compare-row > .sds-compare-cell:nth-child(2) {
+    background-position: 0 0, 0 calc(-276 / 3.75 * 1vw);
+  }
+
+  #compare .sds-compare-row--head > .sds-compare-cell:nth-child(1),
+#compare .sds-compare-row--head > .sds-compare-cell:nth-child(2) {
+    z-index: 4;
+  }
+
+  #compare .sds-compare-row--head > .sds-compare-cell:nth-child(2) {
+    border-top: calc(2 / 3.75 * 1vw) solid var(--color-transparent);
+    border-bottom: none;
+    border-radius: calc(20 / 3.75 * 1vw) calc(20 / 3.75 * 1vw) 0 0;
+  }
+
+  #compare .sds-compare-row--head > .sds-compare-cell:nth-child(2)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: var(--dds-compare-divider);
+    z-index: 1;
+  }
+
+  #compare .sds-compare-row:last-child > .sds-compare-cell:nth-child(2) {
+    border-bottom: calc(2 / 3.75 * 1vw) solid var(--color-transparent);
+    border-radius: 0 0 calc(20 / 3.75 * 1vw) calc(20 / 3.75 * 1vw);
+  }
+}

@@ -1,0 +1,63 @@
+/* Legacy compatibility patches owned by this module. Add new styles to the primary module CSS file. */
+
+.dds-footer-email-mobile {
+  display: none;
+}
+
+#footer [data-cms-key="footer.legal.email"] {
+  font-size: max(12px, calc(14 / 14.4 * 1vw)) !important;
+  line-height: 1.4286 !important;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  #footer [data-cms-key="footer.legal.email"] {
+    font-size: max(12px, calc(14 / 8.1 * 1vw)) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  #footer {
+    padding-top: calc(64 / 14.4 * 1vw) !important;
+    padding-bottom: calc(64 / 14.4 * 1vw) !important;
+  }
+
+  #footer .dds-footer-top,
+#footer .dds-footer-links {
+    height: auto !important;
+    min-height: 0;
+  }
+
+  #footer .dds-footer-legal {
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 767px) {
+
+  #footer [data-cms-key="footer.legal.email"] {
+    font-size: max(12px, calc(14 / 3.75 * 1vw)) !important;
+  }
+
+  #footer {
+    padding-bottom: calc(24 / 3.75 * 1vw) !important;
+  }
+
+  #footer .dds-footer-email-mobile {
+    display: block;
+  }
+
+  #footer .dds-footer-legal > a {
+    display: none !important;
+  }
+}
+.dds-footer-legal-email {
+  color: inherit;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-body-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-body-sm);
+  letter-spacing: var(--letter-spacing-normal);
+  text-align: start;
+  text-decoration: none;
+  text-transform: none;
+}

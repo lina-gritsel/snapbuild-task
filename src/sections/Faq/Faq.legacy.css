@@ -1,0 +1,39 @@
+/* Legacy compatibility patches owned by this module. Add new styles to the primary module CSS file. */
+
+#faq .dds-accordion-title {
+  font-weight: 500 !important;
+}
+
+#faq .dds-accordion-item {
+  position: relative;
+}
+
+#faq .dds-accordion-head::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+
+  #faq .dds-accordion-subtitle {
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 0;
+  }
+
+  #faq .dds-accordion-state:checked ~ .dds-accordion-panel {
+    grid-template-rows: minmax(0, 1fr);
+    overflow: visible;
+  }
+
+  #faq .dds-accordion-state:checked ~ .dds-accordion-panel .dds-accordion-answer {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible;
+  }
+}

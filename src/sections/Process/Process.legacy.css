@@ -1,0 +1,65 @@
+/* Legacy compatibility patches owned by this module. Add new styles to the primary module CSS file. */
+
+#process .dds-steps-title {
+  font-weight: 500 !important;
+}
+
+#process .dds-steps-name,
+#process .dds-steps-desc {
+  font-weight: 500 !important;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  #process .dds-steps-name {
+    font-size: calc(20 / 8.1 * 1vw) !important;
+    line-height: calc(28 / 8.1 * 1vw) !important;
+    letter-spacing: calc(-0.5 / 8.1 * 1vw) !important;
+  }
+
+  #process .dds-steps-desc {
+    font-size: calc(16 / 8.1 * 1vw) !important;
+    line-height: calc(24 / 8.1 * 1vw) !important;
+  }
+
+  #process .dds-steps-media {
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    border-radius: calc(12 / 8.1 * 1vw) !important;
+  }
+}
+
+@media (max-width: 767px) {
+
+  #process .dds-steps-subtitle {
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 0;
+  }
+
+  #process .dds-steps-name {
+    font-size: calc(16 / 3.75 * 1vw) !important;
+    line-height: calc(22 / 3.75 * 1vw) !important;
+    letter-spacing: 0 !important;
+  }
+
+  #process .dds-steps-desc {
+    font-size: calc(14 / 3.75 * 1vw) !important;
+    line-height: calc(20 / 3.75 * 1vw) !important;
+  }
+
+  #process .dds-steps-media {
+    width: 100%;
+    height: auto !important;
+    aspect-ratio: 2 / 1 !important;
+    border-radius: var(--radius-xs) !important;
+  }
+}
+
+/* The step-2 render is a centred object, so the mobile 2/1 and tablet 1/1 crops
+   cut it off. It ships per-breakpoint reframes instead; `display: contents`
+   keeps the <img> laid out exactly as the unwrapped siblings. */
+#process .dds-steps-picture {
+  display: contents;
+}

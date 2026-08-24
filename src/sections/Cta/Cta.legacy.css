@@ -1,0 +1,21 @@
+/* Legacy compatibility patches owned by this module. Add new styles to the primary module CSS file. */
+
+@media (max-width: 767px) {
+
+  #cta {
+    padding-top: calc(32 / 3.75 * 1vw);
+  }
+
+  #cta .dds-launch-subtitle {
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  #cta .dds-launch-title {
+    font-size: 40px !important;
+  }
+}

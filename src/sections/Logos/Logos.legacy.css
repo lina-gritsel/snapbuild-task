@@ -1,0 +1,48 @@
+/* Legacy compatibility patches owned by this module. Add new styles to the primary module CSS file. */
+
+@media (max-width: 767px) {
+  #logos {
+    margin-top: calc(16 / 3.75 * 1vw);
+  }
+
+  #logos.dds-marquee {
+    gap: calc(24 / 3.75 * 1vw);
+  }
+
+  #logos .dds-marquee-content,
+#logos .dds-marquee-item {
+    align-items: flex-end;
+  }
+
+  #logos .dds-marquee-item-10 img {
+    width: calc(100 / 3.75 * 1vw);
+    height: auto;
+  }
+}
+
+/* Keep one static, contained logo group outside the mobile marquee layout. */
+
+@media (min-width: 768px) {
+  #logos {
+    overflow: hidden;
+  }
+
+  #logos .dds-marquee-track {
+    align-self: auto;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+    overflow: hidden;
+    animation: none !important;
+    transform: none !important;
+  }
+
+  #logos .dds-marquee-content {
+    display: contents;
+  }
+
+  #logos .dds-marquee-content[aria-hidden="true"] {
+    display: none;
+  }
+}

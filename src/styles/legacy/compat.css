@@ -1,0 +1,17 @@
+/*
+ * Import-only compatibility manifest.
+ * Legacy patches stay next to their owning layout, section, or shared UI module.
+ */
+
+@import '../../layout/Header/Header.legacy.css';
+@import '../../layout/Footer/Footer.legacy.css';
+@import '../../shared/ui/CookieBanner/CookieBanner.legacy.css';
+@import '../../sections/Hero/Hero.legacy.css';
+@import '../../sections/Logos/Logos.legacy.css';
+@import '../../sections/Process/Process.legacy.css';
+@import '../../sections/UseCases/UseCases.legacy.css';
+@import '../../sections/Compare/Compare.legacy.css';
+@import '../../sections/Features/Features.legacy.css';
+@import '../../sections/Roadmap/Roadmap.legacy.css';
+@import '../../sections/Faq/Faq.legacy.css';
+@import '../../sections/Cta/Cta.legacy.css';

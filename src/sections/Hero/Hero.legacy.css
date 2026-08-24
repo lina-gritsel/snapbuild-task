@@ -1,0 +1,90 @@
+/* Legacy compatibility patches owned by this module. Add new styles to the primary module CSS file. */
+
+#hero .dds-app-preview-media,
+#hero .dds-app-preview-shot,
+#hero img[data-cms-image="hero.app-screenshot"] {
+  aspect-ratio: 2632 / 1386 !important;
+}
+
+#hero .dds-app-preview-media {
+  height: auto !important;
+  padding-top: 0 !important;
+}
+
+#hero .dds-app-preview-shot,
+#hero img[data-cms-image="hero.app-screenshot"] {
+  display: block;
+  bottom: 0;
+}
+
+@media (min-width: 1024px) {
+  #hero .dds-app-preview-media {
+    margin-top: calc(20 / 14.4 * 1vw);
+  }
+}
+
+@media (max-width: 767px) {
+
+  #hero .dds-app-preview-subtitle {
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 0;
+  }
+
+  #hero.dds-app-preview {
+    padding: 0;
+  }
+
+  #hero .dds-app-preview-card {
+    width: 100%;
+    min-height: 0;
+    height: auto;
+    border-radius: 0;
+  }
+
+  #hero .dds-app-preview-inner {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    padding: calc(88 / 3.75 * 1vw) 0 0;
+    gap: calc(32 / 3.75 * 1vw);
+  }
+
+  #hero .dds-app-preview-intro {
+    width: 100%;
+    padding-inline: calc(16 / 3.75 * 1vw);
+  }
+
+  #hero .dds-app-preview-heading,
+#hero .dds-app-preview-title,
+#hero .dds-app-preview-subtitle {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    min-height: 0;
+    text-align: center;
+  }
+
+  #hero .dds-app-preview-media {
+    /* 16px gutters, matching the rest of the mobile layout. !important beats
+       the later inline #browser-annotation-fixes width:100%. */
+    width: calc(100% - calc(32 / 3.75 * 1vw)) !important;
+    height: auto !important;
+    min-height: 0;
+    margin-inline: auto;
+    padding: 0;
+    aspect-ratio: 2632 / 1386;
+    overflow: hidden;
+  }
+
+  #hero .dds-app-preview-shot,
+#hero img[data-cms-image="hero.app-screenshot"] {
+    width: 100%;
+    height: 100%;
+    /* !important beats the later inline #browser-annotation-fixes block. */
+    border-radius: var(--radius-top-xs) !important;
+    object-fit: cover;
+    object-position: center;
+  }
+}

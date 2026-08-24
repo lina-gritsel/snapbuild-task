@@ -1,0 +1,92 @@
+/* Legacy compatibility patches owned by this module. Add new styles to the primary module CSS file. */
+
+#features .dds-why-safe-section-title {
+  font-weight: 500 !important;
+}
+
+#features .dds-why-safe-point-title,
+#features .dds-why-safe-point-desc {
+  font-weight: 500 !important;
+}
+
+#features .dds-why-safe-point > .dds-why-safe-card {
+  display: none;
+}
+
+#features .dds-why-safe-image {
+  display: block;
+  width: 100%;
+  height: calc(432 / 14.4 * 1vw);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+#features .dds-why-safe-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 1023px) {
+  #features .dds-why-safe-image {
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  #features .dds-why-safe-image {
+    border-radius: calc(12 / 8.1 * 1vw);
+  }
+}
+
+@media (max-width: 767px) {
+  #features .dds-why-safe-image {
+    height: calc(171.5 / 3.75 * 1vw);
+    aspect-ratio: auto;
+    border-radius: var(--radius-xs);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  #features .dds-why-safe-point-title {
+    font-size: calc(20 / 8.1 * 1vw) !important;
+    line-height: calc(28 / 8.1 * 1vw) !important;
+    letter-spacing: calc(-0.5 / 8.1 * 1vw) !important;
+  }
+
+  #features .dds-why-safe-point-desc {
+    font-size: calc(16 / 8.1 * 1vw) !important;
+    line-height: calc(24 / 8.1 * 1vw) !important;
+  }
+
+  #features .dds-why-safe-card {
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    border-radius: calc(12 / 8.1 * 1vw) !important;
+  }
+}
+
+@media (max-width: 767px) {
+
+  #features .dds-why-safe-point-title {
+    font-size: calc(16 / 3.75 * 1vw) !important;
+    line-height: calc(22 / 3.75 * 1vw) !important;
+    letter-spacing: 0 !important;
+  }
+
+  #features .dds-why-safe-point-desc {
+    font-size: calc(14 / 3.75 * 1vw) !important;
+    line-height: calc(20 / 3.75 * 1vw) !important;
+  }
+
+  #features .dds-why-safe-card {
+    width: 100%;
+    height: auto !important;
+    aspect-ratio: 2 / 1 !important;
+    border-radius: var(--radius-xs) !important;
+  }
+}

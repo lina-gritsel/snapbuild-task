@@ -1,0 +1,6 @@
+/* Legacy compatibility patches owned by this module. Add new styles to the primary module CSS file. */
+
+.dds-cookie-actions {
+  justify-content: flex-end;
+  width: 100%;
+}
