@@ -1,6 +1,28 @@
 import type { ReactElement } from 'react'
+import { canOpenMobileLightbox } from '../../shared/lib/media'
+import type { LightboxContent } from '../../shared/ui/Lightbox/Lightbox.types'
 
-export default function Hero(): ReactElement {
+const heroTitle = 'Платформа, где все создается в рамках вашего бренда и дизайн-системы'
+const heroDescription =
+  'Подключите дизайн-систему к Снэпбилду, чтобы каждый участник команды мог создавать профессиональные материалы в фирменном стиле за минуты, а не дни.'
+const heroImage = 'assets/images/hero-snapbuild-2026-08-07-v2.webp'
+
+type HeroProps = {
+  onPreview: (content: LightboxContent) => void
+}
+
+export default function Hero({ onPreview }: HeroProps): ReactElement {
+  const openPreview = () => {
+    if (!canOpenMobileLightbox()) return
+
+    onPreview({
+      src: heroImage,
+      alt: '',
+      title: heroTitle,
+      description: heroDescription,
+    })
+  }
+
   return (
     <section
       className="hero dds-app-preview"
@@ -14,11 +36,10 @@ export default function Hero(): ReactElement {
           <div className="dds-app-preview-intro">
             <div className="dds-app-preview-heading">
               <h1 className="dds-app-preview-title" data-cms-key="hero.title">
-                Платформа, где все создается в рамках вашего бренда и дизайн-системы
+                {heroTitle}
               </h1>
               <p className="dds-app-preview-subtitle" data-cms-key="hero.subtitle">
-                Подключите дизайн-систему к Снэпбилду, чтобы каждый участник команды мог создавать
-                профессиональные материалы в фирменном стиле за минуты, а не дни.
+                {heroDescription}
               </p>
             </div>
             <a
@@ -41,8 +62,9 @@ export default function Hero(): ReactElement {
               className="dds-app-preview-shot"
               data-cms-image="hero.app-screenshot"
               data-cms-no-generate=""
-              src="assets/images/hero-snapbuild-2026-08-07-v2.webp"
+              src={heroImage}
               alt=""
+              onClick={openPreview}
             />
           </div>
         </div>

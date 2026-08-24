@@ -1,5 +1,5 @@
 import { useState, type ReactElement } from 'react'
-import { COOKIE_CONSENT_STORAGE_KEY } from '../../constants/storage'
+import { COOKIE_CONSENT_STORAGE_KEY } from '../../config/storage'
 
 export default function CookieBanner(): ReactElement | null {
   const [visible, setVisible] = useState(() => {
