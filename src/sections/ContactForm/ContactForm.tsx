@@ -1,10 +1,13 @@
 'use client'
 
 import {
+  useEffect,
+  useRef,
   useState,
   type ChangeEvent,
   type FocusEvent,
   type FormEvent,
+  type KeyboardEvent,
   type ReactElement,
 } from 'react'
 
@@ -26,7 +29,25 @@ function validateField(name: FieldName, value: string, checked = false): string 
 
 export default function ContactForm(): ReactElement {
   const [status, setStatus] = useState('idle')
+  const [topic, setTopic] = useState(topics[0])
+  const [topicListOpen, setTopicListOpen] = useState(false)
   const [errors, setErrors] = useState<FormErrors>({})
+  const topicSelectRef = useRef<HTMLDivElement>(null)
+  const topicTriggerRef = useRef<HTMLButtonElement>(null)
+  const topicOptionRefs = useRef<(HTMLButtonElement | null)[]>([])
+
+  useEffect(() => {
+    if (!topicListOpen) return
+
+    const closeOnOutsidePointerDown = (event: PointerEvent) => {
+      if (event.target instanceof Node && !topicSelectRef.current?.contains(event.target)) {
+        setTopicListOpen(false)
+      }
+    }
+
+    document.addEventListener('pointerdown', closeOnOutsidePointerDown)
+    return () => document.removeEventListener('pointerdown', closeOnOutsidePointerDown)
+  }, [topicListOpen])
 
   const validateControl = (name: FieldName, value: string, checked = false) => {
     const error = validateField(name, value, checked)
@@ -52,6 +73,74 @@ export default function ContactForm(): ReactElement {
       event.currentTarget.value,
       event.currentTarget instanceof HTMLInputElement && event.currentTarget.checked,
     )
+  }
+
+  const focusTopicOption = (index: number) => {
+    topicOptionRefs.current[index]?.focus()
+  }
+
+  const openTopicList = (index = topics.indexOf(topic)) => {
+    setTopicListOpen(true)
+    requestAnimationFrame(() => focusTopicOption(index))
+  }
+
+  const selectTopic = (nextTopic: string) => {
+    setTopic(nextTopic)
+    setTopicListOpen(false)
+    requestAnimationFrame(() => topicTriggerRef.current?.focus())
+  }
+
+  const handleTopicTriggerKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
+    if (event.key === 'Escape' && topicListOpen) {
+      event.preventDefault()
+      setTopicListOpen(false)
+      return
+    }
+
+    if (
+      event.key === 'ArrowDown' ||
+      event.key === 'ArrowUp' ||
+      event.key === 'Home' ||
+      event.key === 'End'
+    ) {
+      event.preventDefault()
+      const selectedIndex = topics.indexOf(topic)
+      const nextIndex =
+        event.key === 'ArrowDown'
+          ? Math.min(selectedIndex + 1, topics.length - 1)
+          : event.key === 'ArrowUp'
+            ? Math.max(selectedIndex - 1, 0)
+            : event.key === 'Home'
+              ? 0
+              : topics.length - 1
+      openTopicList(nextIndex)
+    }
+  }
+
+  const handleTopicOptionKeyDown = (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
+    if (event.key === 'Escape') {
+      event.preventDefault()
+      setTopicListOpen(false)
+      topicTriggerRef.current?.focus()
+      return
+    }
+
+    if (event.key === 'ArrowDown') {
+      event.preventDefault()
+      focusTopicOption((index + 1) % topics.length)
+    }
+    if (event.key === 'ArrowUp') {
+      event.preventDefault()
+      focusTopicOption((index - 1 + topics.length) % topics.length)
+    }
+    if (event.key === 'Home') {
+      event.preventDefault()
+      focusTopicOption(0)
+    }
+    if (event.key === 'End') {
+      event.preventDefault()
+      focusTopicOption(topics.length - 1)
+    }
   }
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -148,17 +237,52 @@ export default function ContactForm(): ReactElement {
                 </span>
               )}
             </label>
-            <label className="dds-contact-field dds-contact-field-wide">
-              <span>Тема</span>
-              <div className="dds-contact-topic-select">
-                <select name="topic" className="dds-contact-topic-trigger" defaultValue={topics[0]}>
-                  {topics.map((item) => (
-                    <option key={item}>{item}</option>
-                  ))}
-                </select>
-                <span className="dds-contact-topic-chevron" aria-hidden="true" />
+            <div className="dds-contact-field dds-contact-field-wide">
+              <span id="dds-contact-topic-label">Тема</span>
+              <div className="dds-contact-topic-select" ref={topicSelectRef}>
+                <input name="topic" type="hidden" value={topic} />
+                <button
+                  ref={topicTriggerRef}
+                  type="button"
+                  className="dds-contact-topic-trigger"
+                  aria-labelledby="dds-contact-topic-label"
+                  aria-haspopup="listbox"
+                  aria-controls="dds-contact-topic-list"
+                  aria-expanded={topicListOpen}
+                  onClick={() => (topicListOpen ? setTopicListOpen(false) : openTopicList())}
+                  onKeyDown={handleTopicTriggerKeyDown}
+                >
+                  <span>{topic}</span>
+                  <span className="dds-contact-topic-chevron" aria-hidden="true" />
+                </button>
+                {topicListOpen && (
+                  <ul
+                    className="dds-contact-topic-list"
+                    id="dds-contact-topic-list"
+                    role="listbox"
+                    aria-label="Тема"
+                  >
+                    {topics.map((item, index) => (
+                      <li key={item} role="presentation">
+                        <button
+                          ref={(element) => {
+                            topicOptionRefs.current[index] = element
+                          }}
+                          type="button"
+                          role="option"
+                          aria-selected={item === topic}
+                          className={item === topic ? 'is-selected' : undefined}
+                          onClick={() => selectTopic(item)}
+                          onKeyDown={(event) => handleTopicOptionKeyDown(event, index)}
+                        >
+                          {item}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
-            </label>
+            </div>
             <label className="dds-contact-field dds-contact-field-wide">
               <span>Сообщение</span>
               <textarea

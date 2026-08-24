@@ -95,13 +95,17 @@ describe('semantic controls', () => {
     )
   })
 
-  it('uses a native select for the contact topic', async () => {
+  it('opens the custom topic list and selects an option with the keyboard', async () => {
     const user = userEvent.setup()
     render(<ContactForm />)
 
-    const topic = screen.getByRole('combobox', { name: 'Тема' })
-    await user.selectOptions(topic, 'Запросить демонстрацию')
-    expect(topic).toHaveValue('Запросить демонстрацию')
+    const topic = screen.getByRole('button', { name: 'Тема' })
+    await user.click(topic)
+    expect(topic).toHaveAttribute('aria-expanded', 'true')
+
+    await user.keyboard('{ArrowDown}{Enter}')
+    expect(topic).toHaveTextContent('Обсудить сотрудничество')
+    expect(topic).toHaveAttribute('aria-expanded', 'false')
   })
 
   it('keeps the hero image eager and makes lightbox controls keyboard-accessible', async () => {

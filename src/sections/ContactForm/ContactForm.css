@@ -233,17 +233,17 @@
 }
 
 .dds-contact-topic-chevron {
-  position: absolute;
-  top: 50%;
-  right: calc(16 / 14.4 * min(1vw, 14.4px));
-  pointer-events: none;
   width: calc(9 / 14.4 * min(1vw, 14.4px));
   height: calc(9 / 14.4 * min(1vw, 14.4px));
   margin-right: calc(3 / 14.4 * min(1vw, 14.4px));
   border-right: 2px solid currentColor;
   border-bottom: 2px solid currentColor;
-  transform: translateY(-70%) rotate(45deg);
+  transform: rotate(45deg) translateY(calc(-2 / 14.4 * min(1vw, 14.4px)));
   transition: transform var(--motion-duration-fast) var(--ease-standard);
+}
+
+.dds-contact-topic-trigger[aria-expanded="true"] .dds-contact-topic-chevron {
+  transform: rotate(225deg) translateY(calc(-2 / 14.4 * min(1vw, 14.4px)));
 }
 
 .dds-contact-topic-list {
@@ -309,7 +309,8 @@
   .dds-contact-field input, .dds-contact-field textarea { min-height: calc(52 / 8.1 * 1vw); padding: calc(14 / 8.1 * 1vw) calc(16 / 8.1 * 1vw); border-radius: calc(14 / 8.1 * 1vw); font-size: calc(15 / 8.1 * 1vw); }
   .dds-contact-field textarea { min-height: calc(112 / 8.1 * 1vw); }
   .dds-contact-topic-trigger { min-height: calc(52 / 8.1 * 1vw); padding: calc(14 / 8.1 * 1vw) calc(16 / 8.1 * 1vw); border-radius: calc(14 / 8.1 * 1vw); font-size: calc(15 / 8.1 * 1vw); }
-  .dds-contact-topic-chevron { right: calc(16 / 8.1 * 1vw); width: calc(9 / 8.1 * 1vw); height: calc(9 / 8.1 * 1vw); margin-right: calc(3 / 8.1 * 1vw); }
+  .dds-contact-topic-chevron { width: calc(9 / 8.1 * 1vw); height: calc(9 / 8.1 * 1vw); margin-right: calc(3 / 8.1 * 1vw); transform: rotate(45deg) translateY(calc(-2 / 8.1 * 1vw)); }
+  .dds-contact-topic-trigger[aria-expanded="true"] .dds-contact-topic-chevron { transform: rotate(225deg) translateY(calc(-2 / 8.1 * 1vw)); }
   .dds-contact-topic-list { top: calc(100% + calc(8 / 8.1 * 1vw)); gap: calc(4 / 8.1 * 1vw); padding: calc(8 / 8.1 * 1vw); border-radius: calc(14 / 8.1 * 1vw); }
   .dds-contact-topic-list button { padding: calc(10 / 8.1 * 1vw) calc(12 / 8.1 * 1vw); border-radius: calc(10 / 8.1 * 1vw); font-size: calc(15 / 8.1 * 1vw); }
   .dds-contact-consent { gap: calc(10 / 8.1 * 1vw); font-size: calc(13 / 8.1 * 1vw); }
@@ -332,7 +333,8 @@
   .dds-contact-field input, .dds-contact-field textarea { min-height: calc(50 / 3.75 * 1vw); padding: calc(13 / 3.75 * 1vw) calc(14 / 3.75 * 1vw); border-radius: calc(14 / 3.75 * 1vw); font-size: calc(14 / 3.75 * 1vw); }
   .dds-contact-field textarea { min-height: calc(112 / 3.75 * 1vw); }
   .dds-contact-topic-trigger { min-height: calc(50 / 3.75 * 1vw); padding: calc(13 / 3.75 * 1vw) calc(14 / 3.75 * 1vw); border-radius: calc(14 / 3.75 * 1vw); font-size: calc(14 / 3.75 * 1vw); }
-  .dds-contact-topic-chevron { right: calc(14 / 3.75 * 1vw); width: calc(9 / 3.75 * 1vw); height: calc(9 / 3.75 * 1vw); margin-right: calc(3 / 3.75 * 1vw); }
+  .dds-contact-topic-chevron { width: calc(9 / 3.75 * 1vw); height: calc(9 / 3.75 * 1vw); margin-right: calc(3 / 3.75 * 1vw); transform: rotate(45deg) translateY(calc(-2 / 3.75 * 1vw)); }
+  .dds-contact-topic-trigger[aria-expanded="true"] .dds-contact-topic-chevron { transform: rotate(225deg) translateY(calc(-2 / 3.75 * 1vw)); }
   .dds-contact-topic-list { top: calc(100% + calc(8 / 3.75 * 1vw)); gap: calc(4 / 3.75 * 1vw); padding: calc(8 / 3.75 * 1vw); border-radius: calc(14 / 3.75 * 1vw); }
   .dds-contact-topic-list button { padding: calc(10 / 3.75 * 1vw) calc(12 / 3.75 * 1vw); border-radius: calc(10 / 3.75 * 1vw); font-size: calc(14 / 3.75 * 1vw); }
   .dds-contact-consent { gap: calc(9 / 3.75 * 1vw); font-size: calc(12 / 3.75 * 1vw); }
